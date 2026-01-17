@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Talent Management | SHRM-CP Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Talent Management</h1>
+            <span class="week-badge">Week 10</span>
+            <p>Navigate real-world talent acquisition, development, and retention challenges</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <h2>Welcome to the Talent Management Simulation</h2>
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>You will receive 8 inbox items requiring your response</li>
+                    <li>Each item presents a realistic HR scenario</li>
+                    <li>Select the best response from the options provided</li>
+                    <li>You will receive immediate feedback after each selection</li>
+                    <li>Each item is worth 12.5 points (100 points total)</li>
+                    <li>You cannot change your answers once submitted</li>
+                    <li>A summary will be provided at the end of the module</li>
+                </ul>
+            </div>
+            <button class="btn btn-primary" onclick="startSimulation()">Begin Simulation</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progressContainer" class="progress-container hidden">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progressText">0 of 8 completed</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questionsContainer" class="hidden">
+            <!-- Item 1 -->
+            <div id="question1" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 1 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Marcus Chen, Hiring Manager - Engineering</div>
+                            <div class="email-subject">Urgent: Top Candidate Received Competing Offer</div>
+                            <div class="email-time">Today, 9:15 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        Our top candidate for the Senior Developer position just informed me she received a competing offer with a 15% higher salary. She's exactly what we need and has skills that took us months to find. She needs an answer by end of day tomorrow. Our posted salary range is maxed out at what we offered. What should I do?<br><br>
+                        Thanks,<br>
+                        Marcus
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(1, 'A', 100, 'excellent')">
+                            A) Request an urgent meeting with compensation and finance to explore total compensation adjustments including signing bonus, flexible work arrangements, or accelerated review timeline while emphasizing the role's growth potential.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'B', 80, 'good')">
+                            B) Present a counter-offer focusing on non-monetary benefits such as professional development budget, additional PTO, and remote work flexibility, while being transparent about salary constraints.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'C', 60, 'acceptable')">
+                            C) Advise Marcus to have a conversation with the candidate about long-term career growth opportunities and company culture fit before making any commitments.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'D', 40, 'poor')">
+                            D) Recommend letting the candidate go since exceeding the salary range could create internal equity issues with current employees.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'E', 20, 'problematic')">
+                            E) Tell Marcus to match the competing offer immediately to avoid losing the candidate, then figure out budget implications later.
+                        </button>
+                    </div>
+                    <div id="feedback1" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn1" class="btn btn-primary" onclick="nextQuestion(2)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div id="question2" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 2 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Jennifer Walsh, VP of Operations</div>
+                            <div class="email-subject">Succession Planning Concern</div>
+                            <div class="email-time">Today, 10:30 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello,<br><br>
+                        Two of my senior managers are retiring within the next 18 months, and I don't have anyone ready to step into their roles. I've been so focused on daily operations that I've neglected developing my team. I need a plan to identify and prepare potential successors quickly. How should I approach this?<br><br>
+                        Best,<br>
+                        Jennifer
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(2, 'A', 100, 'excellent')">
+                            A) Implement a structured talent review process to assess current team members' potential, identify skill gaps, create individualized development plans, and consider job shadowing and stretch assignments with the retiring managers.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'B', 75, 'good')">
+                            B) Recommend conducting a 9-box assessment of her team to identify high-potential employees and pairing them with the retiring managers for knowledge transfer over the next year.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'C', 50, 'acceptable')">
+                            C) Suggest posting the positions internally first to gauge interest and identify candidates who may be ready for promotion with some additional training.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'D', 30, 'poor')">
+                            D) Advise her to start external recruiting now since 18 months isn't enough time to develop internal candidates for senior management roles.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'E', 10, 'problematic')">
+                            E) Tell her not to worry since 18 months is plenty of time and she can address this closer to the retirement dates.
+                        </button>
+                    </div>
+                    <div id="feedback2" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn2" class="btn btn-primary" onclick="nextQuestion(3)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div id="question3" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 3 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">David Park, Team Lead - Customer Service</div>
+                            <div class="email-subject">High Turnover in My Department</div>
+                            <div class="email-time">Today, 11:45 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi HR,<br><br>
+                        We've lost 6 customer service reps in the past 4 months. Exit interviews mention "lack of growth opportunities" and "feeling undervalued." I'm constantly training new hires who leave within a year. This is affecting our service quality and team morale. What can we do to stop the bleeding?<br><br>
+                        David
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(3, 'A', 100, 'excellent')">
+                            A) Partner with David to create career pathways showing progression opportunities, implement a recognition program, conduct stay interviews with current employees, and review compensation competitiveness for the role.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'B', 80, 'good')">
+                            B) Analyze exit interview data for patterns, benchmark salaries against market rates, and develop a retention strategy that addresses the specific concerns raised by departing employees.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'C', 55, 'acceptable')">
+                            C) Recommend implementing an employee recognition program and creating cross-training opportunities to provide variety and skill development.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'D', 35, 'poor')">
+                            D) Suggest increasing starting salaries to attract better candidates who may stay longer, as turnover is often about compensation.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'E', 15, 'problematic')">
+                            E) Explain that high turnover is normal in customer service roles and focus on streamlining the onboarding process to train replacements faster.
+                        </button>
+                    </div>
+                    <div id="feedback3" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn3" class="btn btn-primary" onclick="nextQuestion(4)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div id="question4" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 4 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Sarah Mitchell, Director of Marketing</div>
+                            <div class="email-subject">Internal vs External Candidate Dilemma</div>
+                            <div class="email-time">Today, 1:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello,<br><br>
+                        I'm hiring for a Marketing Manager position. I have an internal candidate, Tom, who's been with us 5 years and applied enthusiastically. He's solid but not exceptional. An external candidate has stronger qualifications and fresh ideas but would cost 20% more. If I hire externally, Tom will be devastated and might leave. How should I handle this?<br><br>
+                        Sarah
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(4, 'A', 100, 'excellent')">
+                            A) Conduct a thorough, objective assessment of both candidates against job requirements, then have an honest development conversation with Tom regardless of the outcome, creating a growth plan for him if not selected.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'B', 75, 'good')">
+                            B) Recommend using a structured interview process with a diverse panel to evaluate both candidates fairly, ensuring Tom receives constructive feedback and a clear development path regardless of the decision.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'C', 50, 'acceptable')">
+                            C) Suggest giving Tom the opportunity first with a clear 90-day performance plan, with the understanding that expectations must be met.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'D', 30, 'poor')">
+                            D) Advise hiring the external candidate since having the best talent is most important, and Tom will eventually get over it.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'E', 10, 'problematic')">
+                            E) Recommend promoting Tom to avoid losing a loyal employee, as five years of company knowledge is more valuable than outside experience.
+                        </button>
+                    </div>
+                    <div id="feedback4" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn4" class="btn btn-primary" onclick="nextQuestion(5)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div id="question5" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 5 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Amanda Torres, HR Business Partner</div>
+                            <div class="email-subject">Onboarding Process Feedback</div>
+                            <div class="email-time">Today, 2:15 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        Recent new hire surveys show our onboarding gets poor ratings. Common complaints: "felt lost the first month," "my manager was too busy for me," and "unclear expectations." New hires are taking 6+ months to reach full productivity. Leadership wants this fixed but won't approve additional headcount for a dedicated onboarding team. Ideas?<br><br>
+                        Amanda
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(5, 'A', 100, 'excellent')">
+                            A) Design a structured 90-day onboarding framework with clear milestones, implement a buddy system using existing employees, create role-specific checklists for managers, and establish regular check-ins at 30/60/90 days.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'B', 80, 'good')">
+                            B) Develop standardized onboarding checklists and training modules that managers can facilitate, paired with a peer mentor program to provide support without requiring additional HR headcount.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'C', 55, 'acceptable')">
+                            C) Create a self-service onboarding portal with resources, training videos, and FAQs that new hires can access independently during their first weeks.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'D', 35, 'poor')">
+                            D) Recommend making managers accountable for onboarding through performance metrics, which will force them to prioritize new hire integration.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'E', 15, 'problematic')">
+                            E) Push back on leadership, explaining that effective onboarding requires dedicated resources and the current approach is the best possible without additional investment.
+                        </button>
+                    </div>
+                    <div id="feedback5" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn5" class="btn btn-primary" onclick="nextQuestion(6)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div id="question6" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 6 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Robert Kim, Chief Technology Officer</div>
+                            <div class="email-subject">Skills Gap in Development Team</div>
+                            <div class="email-time">Today, 3:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello,<br><br>
+                        We're adopting cloud-native technologies, but most of my team has legacy system experience. Training everyone would be expensive and time-consuming. Hiring people with these skills is extremely competitive and costly. I need to close this skills gap within 12 months to meet our digital transformation goals. What's the best approach?<br><br>
+                        Robert
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(6, 'A', 100, 'excellent')">
+                            A) Recommend a blended approach: identify high-potential internal employees for intensive upskilling, strategically hire 2-3 experts who can mentor others, and partner with online learning platforms for scalable training.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'B', 75, 'good')">
+                            B) Suggest conducting a skills assessment to identify team members with the strongest aptitude for cloud technologies, then invest in certifications and hands-on projects for this core group to become internal champions.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'C', 50, 'acceptable')">
+                            C) Propose using contractors or consultants initially for cloud projects while developing a longer-term training program for existing staff.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'D', 30, 'poor')">
+                            D) Recommend focusing exclusively on external hiring since training existing employees takes too long and may not yield the expertise level required.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'E', 10, 'problematic')">
+                            E) Advise delaying the digital transformation timeline since 12 months is unrealistic for either training or hiring in the current market.
+                        </button>
+                    </div>
+                    <div id="feedback6" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn6" class="btn btn-primary" onclick="nextQuestion(7)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div id="question7" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 7 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Lisa Brown, Recruiting Manager</div>
+                            <div class="email-subject">Diversity in Candidate Pipeline</div>
+                            <div class="email-time">Today, 4:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        Leadership has noticed our recent hires lack diversity. Looking at our data, our candidate pools are homogeneous from the start. Our job postings go to the same job boards, and we get referrals from our current (not diverse) workforce. I want to improve this but need guidance on effective, legal approaches. Suggestions?<br><br>
+                        Lisa
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(7, 'A', 100, 'excellent')">
+                            A) Expand sourcing channels to include diverse professional associations, HBCUs, and diversity-focused job boards; review job descriptions for biased language; implement blind resume screening; and train hiring managers on inclusive interviewing.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'B', 80, 'good')">
+                            B) Partner with organizations serving underrepresented groups, use AI tools to remove biased language from postings, and ensure diverse interview panels while maintaining merit-based selection criteria.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'C', 55, 'acceptable')">
+                            C) Focus on building relationships with diverse professional networks and universities, and implement structured interviews to reduce unconscious bias in the selection process.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'D', 30, 'poor')">
+                            D) Set diversity targets for each open position to ensure diverse candidates are included in final interview rounds.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'E', 10, 'problematic')">
+                            E) Prioritize hiring diverse candidates over equally qualified non-diverse candidates to quickly improve representation numbers.
+                        </button>
+                    </div>
+                    <div id="feedback7" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn7" class="btn btn-primary" onclick="nextQuestion(8)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div id="question8" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 8 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Michael Stevens, Department Manager</div>
+                            <div class="email-subject">High Performer Requesting Transfer</div>
+                            <div class="email-time">Today, 4:45 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello,<br><br>
+                        My top performer, Jessica, asked to transfer to another department to gain new experience. I really can't afford to lose her - she handles critical projects and mentors junior staff. But I also don't want her to feel stuck and leave the company entirely. She mentioned she's been approached by recruiters. How do I handle this without losing her completely?<br><br>
+                        Michael
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(8, 'A', 100, 'excellent')">
+                            A) Support the transfer request as part of her development, work with her on a transition timeline to document processes and train a successor, and frame this as an investment in retaining talent within the organization.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'B', 75, 'good')">
+                            B) Have a career conversation with Jessica to understand her goals, explore whether a cross-functional project or temporary assignment could provide growth while maintaining her current role, and develop a succession plan.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'C', 50, 'acceptable')">
+                            C) Discuss with the receiving department about a gradual transition or part-time arrangement that allows Jessica to contribute to both areas during a transition period.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'D', 30, 'poor')">
+                            D) Offer Jessica a promotion or raise to stay, emphasizing how valuable she is to the current team's success.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'E', 10, 'problematic')">
+                            E) Explain that transfers require manager approval and she needs to stay until her projects are complete and a replacement is found.
+                        </button>
+                    </div>
+                    <div id="feedback8" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn8" class="btn btn-primary" onclick="showSummary()" disabled>View Results</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Screen -->
+        <div id="summaryContainer" class="summary-container">
+            <div class="summary-header">
+                <h2>Module Complete!</h2>
+                <div class="final-score" id="finalScore">0</div>
+                <div class="score-label">out of 100 points</div>
+                <div id="gradeBadge" class="grade-badge"></div>
+            </div>
+
+            <h3 style="margin: 20px 0; color: #4fc3f7;">Your Responses</h3>
+            <div id="summaryItems" class="summary-items"></div>
+
+            <div class="nav-buttons" style="margin-top: 30px;">
+                <button class="btn btn-secondary" onclick="window.print()">Print Results</button>
+                <a href="index.html" class="btn btn-primary" style="text-decoration: none;">Return to Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulation state
+        let currentQuestion = 1;
+        let totalQuestions = 8;
+        let answers = {};
+        let totalScore = 0;
+
+        // Feedback data for each question
+        const feedbackData = {
+            1: {
+                A: "Excellent approach. You're addressing the candidate's needs holistically while working within organizational constraints. Involving compensation and finance demonstrates strategic thinking, and exploring total rewards beyond base salary shows sophisticated talent acquisition skills.",
+                B: "Good response that creatively addresses salary limitations. Non-monetary benefits can be compelling differentiators, though you should also explore if any salary flexibility exists through proper channels.",
+                C: "Acceptable but passive. While discussing growth opportunities is valuable, time pressure requires more immediate action. The candidate may interpret delay as lack of interest.",
+                D: "This approach prioritizes policy over talent acquisition strategy. While equity concerns are valid, losing a strong candidate without exploring options is a missed opportunity that will cost more in continued vacancy and recruiting.",
+                E: "Problematic approach. Making commitments without budget approval undermines organizational trust and proper compensation governance. This could create legal and financial issues."
+            },
+            2: {
+                A: "Excellent comprehensive approach. This addresses immediate succession needs while building sustainable talent development practices. Combining assessment, development planning, and knowledge transfer maximizes the 18-month timeline.",
+                B: "Good structured approach using proven tools like the 9-box grid. Knowledge transfer with retiring managers is valuable, though a more comprehensive development plan would strengthen the approach.",
+                C: "Acceptable as a starting point but reactive. Internal posting alone doesn't develop candidates or ensure readiness. More proactive development planning is needed.",
+                D: "This underestimates internal talent potential and ignores knowledge transfer opportunities. External hires for senior roles often struggle without institutional knowledge the retiring managers possess.",
+                E: "Problematic response that demonstrates poor understanding of succession planning timelines. Developing senior leaders requires significant time and investment."
+            },
+            3: {
+                A: "Excellent comprehensive retention strategy. This addresses root causes identified in exit interviews while taking proactive steps with current employees. The multi-faceted approach shows strategic HR thinking.",
+                B: "Good data-driven approach that addresses the specific feedback from exit interviews. Benchmarking and targeted strategies show analytical thinking about retention.",
+                C: "Acceptable but limited. Recognition and cross-training help but don't address all concerns raised. Career pathways and compensation review are missing.",
+                D: "This misreads the exit interview data, which specifically mentioned growth and recognition - not just pay. Compensation alone rarely solves retention when development is the core issue.",
+                E: "Problematic response that normalizes a fixable problem. Accepting high turnover damages morale, service quality, and organizational knowledge. This signals HR is not a strategic partner."
+            },
+            4: {
+                A: "Excellent balanced approach. Objective assessment ensures fair evaluation while the development conversation with Tom maintains engagement and shows commitment to internal talent regardless of outcome.",
+                B: "Good process-oriented approach that ensures fairness and provides constructive outcomes for both candidates. Structured interviews reduce bias and improve decision quality.",
+                C: "Acceptable but risky. Giving preference to internal candidates without full evaluation may result in a suboptimal hire. This also doesn't fully address Tom's development needs.",
+                D: "This ignores the cultural and morale implications of how the decision is communicated. The approach matters as much as the outcome for organizational trust.",
+                E: "Problematic approach that prioritizes avoiding difficult conversations over organizational effectiveness. Promoting underqualified candidates damages credibility and team performance."
+            },
+            5: {
+                A: "Excellent resource-efficient solution. The structured framework provides consistency, buddy systems leverage existing staff, and regular check-ins ensure accountability - all without additional headcount.",
+                B: "Good approach that distributes onboarding responsibilities effectively. Standardization and peer support address the core complaints while working within resource constraints.",
+                C: "Acceptable but insufficient alone. Self-service resources help but don't address the relationship-building and guided support new hires need. Technology supplements but doesn't replace human connection.",
+                D: "This approach may create resentment without providing managers the tools and training to succeed. Accountability without support often fails.",
+                E: "Problematic response that positions HR as unable to solve problems creatively. Effective onboarding is possible within constraints through process improvement and leveraging existing resources."
+            },
+            6: {
+                A: "Excellent balanced strategy. Combining internal development with strategic external hiring creates sustainable capability building while meeting timeline pressures. This builds long-term organizational capacity.",
+                B: "Good approach that identifies internal talent for focused development. Creating internal champions enables peer learning and builds culture, though some external expertise may accelerate the timeline.",
+                C: "Acceptable short-term solution but doesn't build internal capability. Over-reliance on contractors can create knowledge dependency and doesn't address the long-term skills gap.",
+                D: "This approach is expensive, ignores valuable institutional knowledge, and may damage morale. It also assumes external hires will be available in a competitive market.",
+                E: "Problematic response that undermines strategic business objectives. HR should enable business goals, not advocate for delaying them. Creative solutions exist within constraints."
+            },
+            7: {
+                A: "Excellent comprehensive approach addressing the full recruitment pipeline. Expanding sourcing, removing bias from postings, and training interviewers creates systemic improvement while maintaining legal compliance and merit-based decisions.",
+                B: "Good multi-pronged approach that expands the candidate pool and reduces bias. Partnership with diverse organizations builds sustainable pipelines while structured processes ensure fairness.",
+                C: "Acceptable foundation for improving diversity through relationship building. However, this doesn't address potential bias in job descriptions or the interview process itself.",
+                D: "This approach risks legal issues if targets become quotas. Focusing on final rounds without addressing pipeline sources doesn't solve the root problem of homogeneous candidate pools.",
+                E: "Problematic and potentially illegal. Prioritizing candidates based on demographic characteristics violates equal employment opportunity laws and undermines merit-based hiring."
+            },
+            8: {
+                A: "Excellent response that balances organizational and individual needs. Supporting career development while planning for succession demonstrates strategic talent management and increases likelihood of long-term retention.",
+                B: "Good approach that explores alternatives and understands motivations. Cross-functional opportunities may satisfy development needs while maintaining continuity, though blocking transfers risks flight.",
+                C: "Acceptable compromise that provides transition time. However, this may be seen as delay tactics if not paired with genuine support for Jessica's development goals.",
+                D: "This treats symptoms rather than causes. Jessica's desire is for growth and experience, not just money. Counter-offers often lead to departure within a year anyway.",
+                E: "Problematic response that prioritizes short-term operational needs over talent development. Blocking internal mobility is a leading cause of employee departure and damages employer brand."
+            }
+        };
+
+        function startSimulation() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('questionsContainer').classList.remove('hidden');
+            document.getElementById('question1').classList.add('active');
+        }
+
+        function selectAnswer(questionNum, answer, score, rating) {
+            // Prevent changing answers
+            if (answers[questionNum]) return;
+
+            // Store answer
+            answers[questionNum] = {
+                answer: answer,
+                score: score,
+                rating: rating,
+                feedback: feedbackData[questionNum][answer]
+            };
+
+            // Update total score
+            totalScore += (score / 100) * 12.5;
+
+            // Disable all options for this question
+            const options = document.querySelectorAll(`#question${questionNum} .response-option`);
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                opt.style.opacity = '0.7';
+            });
+
+            // Highlight selected answer
+            const selectedBtn = event.target;
+            selectedBtn.classList.add(rating);
+            selectedBtn.style.opacity = '1';
+
+            // Show feedback
+            const feedbackPanel = document.getElementById(`feedback${questionNum}`);
+            feedbackPanel.className = `feedback-panel show ${rating}`;
+            feedbackPanel.querySelector('.feedback-score').textContent = `${score}% (${rating.charAt(0).toUpperCase() + rating.slice(1)})`;
+            feedbackPanel.querySelector('.feedback-text').textContent = feedbackData[questionNum][answer];
+
+            // Enable next button
+            document.getElementById(`nextBtn${questionNum}`).disabled = false;
+
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const completed = Object.keys(answers).length;
+            const percentage = (completed / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('progressText').textContent = `${completed} of ${totalQuestions} completed`;
+        }
+
+        function nextQuestion(nextNum) {
+            document.getElementById(`question${nextNum - 1}`).classList.remove('active');
+            document.getElementById(`question${nextNum}`).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showSummary() {
+            document.getElementById('questionsContainer').classList.add('hidden');
+            document.getElementById('progressContainer').classList.add('hidden');
+            document.getElementById('summaryContainer').classList.add('show');
+
+            // Calculate final score
+            const finalScore = Math.round(totalScore);
+            document.getElementById('finalScore').textContent = finalScore;
+
+            // Determine grade
+            let grade, gradeClass;
+            if (finalScore >= 90) { grade = 'A'; gradeClass = 'grade-a'; }
+            else if (finalScore >= 80) { grade = 'B'; gradeClass = 'grade-b'; }
+            else if (finalScore >= 70) { grade = 'C'; gradeClass = 'grade-c'; }
+            else if (finalScore >= 60) { grade = 'D'; gradeClass = 'grade-d'; }
+            else { grade = 'F'; gradeClass = 'grade-f'; }
+
+            const gradeBadge = document.getElementById('gradeBadge');
+            gradeBadge.textContent = `Grade: ${grade}`;
+            gradeBadge.className = `grade-badge ${gradeClass}`;
+
+            // Build summary items
+            const summaryItems = document.getElementById('summaryItems');
+            const itemTitles = [
+                "Top Candidate Competing Offer",
+                "Succession Planning",
+                "High Department Turnover",
+                "Internal vs External Candidate",
+                "Onboarding Process",
+                "Skills Gap in Team",
+                "Diversity in Pipeline",
+                "High Performer Transfer Request"
+            ];
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const answer = answers[i];
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'summary-item';
+                itemDiv.innerHTML = `
+                    <div class="summary-item-header">
+                        <span class="summary-item-title">Item ${i}: ${itemTitles[i-1]}</span>
+                        <span class="summary-item-score ${answer.rating}">${answer.score}%</span>
+                    </div>
+                    <div class="summary-item-response">Your answer: Option ${answer.answer}</div>
+                    <div class="summary-item-feedback">${answer.feedback}</div>
+                `;
+                summaryItems.appendChild(itemDiv);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

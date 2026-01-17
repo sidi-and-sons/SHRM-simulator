@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5: Compensation and Rewards | SHRM-CP Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Compensation and Rewards</h1>
+            <span class="week-badge">Week 14</span>
+            <p>Design and manage fair, competitive total rewards programs</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <h2>Welcome to the Compensation and Rewards Simulation</h2>
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>You will receive 8 inbox items requiring your response</li>
+                    <li>Each item presents a realistic HR scenario</li>
+                    <li>Select the best response from the options provided</li>
+                    <li>You will receive immediate feedback after each selection</li>
+                    <li>Each item is worth 12.5 points (100 points total)</li>
+                    <li>You cannot change your answers once submitted</li>
+                    <li>A summary will be provided at the end of the module</li>
+                </ul>
+            </div>
+            <button class="btn btn-primary" onclick="startSimulation()">Begin Simulation</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progressContainer" class="progress-container hidden">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progressText">0 of 8 completed</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questionsContainer" class="hidden">
+            <!-- Item 1 -->
+            <div id="question1" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 1 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Maria Gonzalez, Finance Director</div>
+                            <div class="email-subject">Salary Compression Issue</div>
+                            <div class="email-time">Today, 8:30 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi HR,<br><br>
+                        We have a problem. To attract talent in this competitive market, we've been hiring new accountants at salaries higher than what we pay experienced staff. My senior accountant with 8 years here just found out a new hire makes $5,000 more than her. She's furious and threatening to leave. How do we address this without blowing up our salary budget?<br><br>
+                        Maria
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(1, 'A', 100, 'excellent')">
+                            A) Conduct a comprehensive pay equity analysis, develop a phased adjustment plan for compressed salaries, communicate transparently about the market dynamics, and review your compensation strategy to prevent future compression.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'B', 80, 'good')">
+                            B) Immediately adjust the senior accountant's salary to resolve the inversion, then conduct a broader analysis to identify other compression issues and budget for systematic corrections.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'C', 55, 'acceptable')">
+                            C) Meet with the senior accountant to discuss her total compensation value, highlight non-salary benefits like tenure and PTO, and promise to address pay at her next review.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'D', 30, 'poor')">
+                            D) Explain to the senior accountant that market conditions require higher salaries for new hires, and she was fairly paid based on the market when she was hired.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'E', 10, 'problematic')">
+                            E) Offer the senior accountant a one-time retention bonus to address her concerns without making permanent changes to salary structure.
+                        </button>
+                    </div>
+                    <div id="feedback1" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn1" class="btn btn-primary" onclick="nextQuestion(2)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div id="question2" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 2 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Steve Richardson, CEO</div>
+                            <div class="email-subject">Bonus Pool Allocation</div>
+                            <div class="email-time">Today, 9:45 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        HR Team,<br><br>
+                        This year's bonus pool is 15% smaller than last year due to missed revenue targets. Some departments exceeded goals while others dragged down results. Do we cut everyone's bonus equally, or differentiate based on department performance? The sales team hit 120% of target and expects big payouts, but marketing missed badly. What's fair?<br><br>
+                        Steve
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(2, 'A', 100, 'excellent')">
+                            A) Recommend a differentiated approach that rewards departments and individuals based on performance, while ensuring company-wide reduction impacts everyone. Communicate the methodology transparently to maintain trust in the bonus system.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'B', 80, 'good')">
+                            B) Allocate the reduced pool proportionally based on department performance, with high performers receiving larger shares. Clearly communicate the calculation methodology to all employees.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'C', 55, 'acceptable')">
+                            C) Apply an across-the-board reduction as the base adjustment, then use remaining discretionary funds to provide additional recognition to top-performing teams and individuals.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'D', 30, 'poor')">
+                            D) Cut everyone's bonus equally since bonuses are tied to company performance, and the company as a whole missed targets regardless of individual department results.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'E', 10, 'problematic')">
+                            E) Give the sales team their full expected bonus since they performed, and absorb the entire reduction from underperforming departments.
+                        </button>
+                    </div>
+                    <div id="feedback2" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn2" class="btn btn-primary" onclick="nextQuestion(3)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div id="question3" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 3 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Janet Wu, Benefits Manager</div>
+                            <div class="email-subject">Benefits Cost Increase</div>
+                            <div class="email-time">Today, 10:30 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        Our health insurance renewal came back with a 22% premium increase. Leadership says we can't absorb the full cost increase and must pass some to employees. Our current employee contribution is already at market average. How do we implement increased costs without hurting employee morale or driving people to decline coverage?<br><br>
+                        Janet
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(3, 'A', 100, 'excellent')">
+                            A) Explore alternative plan designs (higher deductible options, HSA contributions, tiered networks), split the increase between company and employees, enhance wellness programs to reduce claims, and communicate transparently about market conditions.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'B', 80, 'good')">
+                            B) Shop alternative carriers to reduce the increase, introduce a high-deductible plan option with company HSA contributions, and phase in employee contribution increases over two years.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'C', 55, 'acceptable')">
+                            C) Pass the minimum necessary increase to employees, absorb what the company can, and communicate clearly about why the increase is happening with comparison to market rates.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'D', 30, 'poor')">
+                            D) Reduce benefits coverage (higher copays, less covered services) to keep employee premium contributions the same, since people are more sensitive to paycheck deductions.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'E', 10, 'problematic')">
+                            E) Pass the full increase to employees since benefits are a privilege, not a right, and employees should expect to pay more when healthcare costs rise.
+                        </button>
+                    </div>
+                    <div id="feedback3" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn3" class="btn btn-primary" onclick="nextQuestion(4)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div id="question4" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 4 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Derek Thomas, Sales VP</div>
+                            <div class="email-subject">Commission Plan Complaints</div>
+                            <div class="email-time">Today, 11:15 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        HR,<br><br>
+                        My sales reps are frustrated with our commission structure. Top performers say the caps limit their earnings. Middle performers say the accelerators are unrealistic. Everyone thinks the quotas are unfair. I want to motivate performance, not create resentment. How should we redesign this?<br><br>
+                        Derek
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(4, 'A', 100, 'excellent')">
+                            A) Gather detailed input from reps at all performance levels, benchmark against industry plans, redesign with uncapped earning potential for top performers, achievable accelerators, fair quota-setting methodology, and clear communication of plan mechanics.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'B', 80, 'good')">
+                            B) Analyze historical performance data to set realistic quotas and accelerator thresholds, remove or raise caps for top performers, and involve sales managers in validating the new structure.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'C', 55, 'acceptable')">
+                            C) Remove the commission caps to address top performer concerns and adjust accelerator thresholds based on historical achievement patterns to make them more attainable.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'D', 30, 'poor')">
+                            D) Keep the current structure but improve communication about how quotas are set and how reps can maximize earnings within the existing system.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'E', 10, 'problematic')">
+                            E) Explain that sales compensation should be challenging and not everyone will reach accelerators - that's what motivates top performers to excel.
+                        </button>
+                    </div>
+                    <div id="feedback4" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn4" class="btn btn-primary" onclick="nextQuestion(5)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div id="question5" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 5 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Lisa Park, HR Business Partner</div>
+                            <div class="email-subject">Pay Transparency Questions</div>
+                            <div class="email-time">Today, 1:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        New state laws require us to post salary ranges on job postings. But our current ranges are wide (e.g., $60K-$120K for one role), and some current employees earn below the posted ranges. Employees are asking why they're paid less than what we're advertising. How do we handle this?<br><br>
+                        Lisa
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(5, 'A', 100, 'excellent')">
+                            A) Audit current pay against posted ranges and market data, bring underpaid employees to minimum of ranges, tighten ranges based on job families and levels, train managers on explaining pay decisions, and develop clear pay progression criteria.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'B', 80, 'good')">
+                            B) Immediately adjust any employees below posted minimums, narrow the ranges to reflect realistic pay for each level, and prepare managers with talking points explaining pay philosophy and how positions in range are determined.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'C', 55, 'acceptable')">
+                            C) Review why employees are below ranges (performance, tenure, grandfathered situations) and develop individual plans to bring them into range over 12-24 months.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'D', 30, 'poor')">
+                            D) Explain to employees that posted ranges represent the full possible range including senior levels, and their pay is appropriate for their experience level.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'E', 10, 'problematic')">
+                            E) Keep current pay and ranges, since the wide ranges technically include all current salaries and we're complying with the letter of the law.
+                        </button>
+                    </div>
+                    <div id="feedback5" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn5" class="btn btn-primary" onclick="nextQuestion(6)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div id="question6" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 6 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Kevin Wright, Engineering Manager</div>
+                            <div class="email-subject">Counter-Offer Situation</div>
+                            <div class="email-time">Today, 2:15 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Urgent,<br><br>
+                        My best engineer, Priya, just gave notice. She received an offer for $30K more plus a senior title. I want to match or exceed it to keep her. She's critical to our upcoming launch. What's the right approach here? Should we have a counter-offer policy?<br><br>
+                        Kevin
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(6, 'A', 100, 'excellent')">
+                            A) Have a conversation with Priya to understand if pay was the only driver or if there are other factors. Consider a counter only if addressing legitimate market misalignment, ensure equity with peers, and recognize that accepted counter-offers often lead to departure within a year.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'B', 80, 'good')">
+                            B) Evaluate whether Priya's current salary is below market, and if so, make an adjustment that also includes a path to the senior title she was offered. Be prepared for her to leave anyway and plan for succession.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'C', 55, 'acceptable')">
+                            C) Make a competitive counter-offer to retain her through the launch, while beginning succession planning and addressing compensation proactively for other at-risk employees.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'D', 30, 'poor')">
+                            D) Match the offer to keep Priya since losing her before the launch would be disastrous and her replacement would cost at least that much anyway.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'E', 10, 'problematic')">
+                            E) Let Priya go since counter-offers rarely work long-term and making exceptions creates expectations that employees can leverage outside offers for raises.
+                        </button>
+                    </div>
+                    <div id="feedback6" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn6" class="btn btn-primary" onclick="nextQuestion(7)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div id="question7" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 7 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Amanda Chen, Total Rewards Director</div>
+                            <div class="email-subject">Remote Work Pay Differential</div>
+                            <div class="email-time">Today, 3:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello,<br><br>
+                        Since we went hybrid, some employees moved to lower cost-of-living areas while keeping their Bay Area salaries. Others who stayed local feel this is unfair. Some companies adjust pay based on location. Should we implement geographic pay differentials, and how would we handle it for those who already moved?<br><br>
+                        Amanda
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(7, 'A', 100, 'excellent')">
+                            A) Develop a clear geographic pay policy based on labor market data for each zone, communicate the rationale transparently, grandfather current remote employees for a transition period, and apply consistently to new hires and relocations going forward.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'B', 80, 'good')">
+                            B) Implement location-based pay zones tied to market rates, provide existing remote employees advance notice before adjustments take effect, and ensure the policy is applied consistently to all future location changes.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'C', 55, 'acceptable')">
+                            C) Apply geographic differentials only to new hires, maintaining current employees at their existing salaries regardless of location to avoid pay cuts for those who already relocated.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'D', 30, 'poor')">
+                            D) Maintain location-agnostic pay since the work being done is the same regardless of where employees live, and pay cuts would damage morale.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'E', 10, 'problematic')">
+                            E) Immediately adjust all remote employees' salaries to reflect their current location, since they made personal choices to move knowing company expectations.
+                        </button>
+                    </div>
+                    <div id="feedback7" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn7" class="btn btn-primary" onclick="nextQuestion(8)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div id="question8" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 8 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Rachel Foster, DEI Director</div>
+                            <div class="email-subject">Pay Equity Audit Results</div>
+                            <div class="email-time">Today, 4:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Confidential,<br><br>
+                        Our pay equity audit revealed troubling patterns. Women in technical roles earn on average 8% less than men in equivalent positions after controlling for experience and performance. Similar gaps exist for some racial groups. Leadership wants to fix this but is concerned about the cost and potential legal exposure. How do we proceed?<br><br>
+                        Rachel
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(8, 'A', 100, 'excellent')">
+                            A) Develop a remediation plan with phased salary adjustments to close gaps, train managers on unbiased compensation decisions, implement ongoing monitoring, and work with legal on appropriate communication while demonstrating commitment to equity.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'B', 80, 'good')">
+                            B) Prioritize immediate adjustments for the most significant gaps, create a multi-year budget to address all disparities, and implement policy changes to prevent future inequities from developing.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'C', 55, 'acceptable')">
+                            C) Begin making adjustments in the next merit cycle, prioritizing the largest individual gaps, while working with legal to understand risk mitigation approaches.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'D', 30, 'poor')">
+                            D) Consult with legal before taking any action since admitting pay gaps exist could create liability, and ensure any communications are carefully reviewed.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'E', 10, 'problematic')">
+                            E) Investigate whether the gaps can be explained by legitimate factors not captured in the audit before making any costly adjustments.
+                        </button>
+                    </div>
+                    <div id="feedback8" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn8" class="btn btn-primary" onclick="showSummary()" disabled>View Results</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Screen -->
+        <div id="summaryContainer" class="summary-container">
+            <div class="summary-header">
+                <h2>Module Complete!</h2>
+                <div class="final-score" id="finalScore">0</div>
+                <div class="score-label">out of 100 points</div>
+                <div id="gradeBadge" class="grade-badge"></div>
+            </div>
+
+            <h3 style="margin: 20px 0; color: #4fc3f7;">Your Responses</h3>
+            <div id="summaryItems" class="summary-items"></div>
+
+            <div class="nav-buttons" style="margin-top: 30px;">
+                <button class="btn btn-secondary" onclick="window.print()">Print Results</button>
+                <a href="index.html" class="btn btn-primary" style="text-decoration: none;">Return to Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulation state
+        let currentQuestion = 1;
+        let totalQuestions = 8;
+        let answers = {};
+        let totalScore = 0;
+
+        // Feedback data for each question
+        const feedbackData = {
+            1: {
+                A: "Excellent systematic approach to a systemic problem. Comprehensive analysis reveals full scope, phased adjustments are fiscally responsible, transparent communication builds trust, and strategy review prevents recurrence. This treats the cause, not just symptoms.",
+                B: "Good immediate response protecting a valued employee while addressing broader issues. The sequence of urgent action followed by systematic analysis is appropriate for retention risk.",
+                C: "Acceptable relationship-focused approach but doesn't fix the actual pay inequity. Highlighting benefits doesn't change the fact that less experienced employees earn more. Promising future action without commitment is risky.",
+                D: "This validates the inequity rather than addressing it. Market explanations don't satisfy employees who see unfairness in their current reality. This approach accelerates departure.",
+                E: "Problematic band-aid solution. Bonuses don't fix structural problems, set expectations for annual retention payments, and cost more over time than adjusting base salary."
+            },
+            2: {
+                A: "Excellent balanced approach maintaining incentive alignment with company results while recognizing differentiated performance. Transparency about methodology builds trust even when the news isn't all positive.",
+                B: "Good performance-differentiated approach that rewards contribution proportionally. Clear communication about methodology helps employees understand the outcome.",
+                C: "Acceptable compromise that shares the burden while preserving some differentiation. However, across-the-board cuts may feel unfair to high performers.",
+                D: "This damages the pay-for-performance link that motivates sales and other high performers. Equal treatment when performance is unequal breeds resentment and may trigger departure of top talent.",
+                E: "Problematic extreme differentiation that will devastate morale in underperforming teams. Marketing employees didn't individually cause the department's miss and shouldn't bear all consequences."
+            },
+            3: {
+                A: "Excellent comprehensive approach exploring alternatives, sharing burden fairly, addressing root causes through wellness, and communicating honestly. Multiple plan options give employees choices matching their needs.",
+                B: "Good multi-pronged approach combining cost shopping, alternative plan design, and phased increases. HSA contributions help offset higher deductibles.",
+                C: "Acceptable cost-sharing approach with appropriate communication. However, without exploring alternatives, employees may resent increases that could have been mitigated.",
+                D: "This trades visible cost (premiums) for hidden cost (reduced coverage), which may backfire when employees experience higher out-of-pocket expenses. Transparency about trade-offs is better.",
+                E: "Problematic framing damages employee relations. Benefits are part of total compensation and a competitive necessity. Full pass-through may price out lower-paid employees from coverage."
+            },
+            4: {
+                A: "Excellent participatory approach addressing all stakeholder concerns. Broad input builds buy-in, benchmarking ensures competitiveness, uncapped earning motivates top performers, and achievable accelerators engage the middle.",
+                B: "Good data-driven approach that addresses specific complaints. Historical analysis helps set realistic targets, and manager involvement provides frontline validation.",
+                C: "Acceptable targeted fixes but may not address quota fairness concerns. Removing caps and adjusting accelerators are good but incomplete without addressing the underlying quota-setting process.",
+                D: "This ignores legitimate structural concerns. Better communication doesn't fix a poorly designed plan. Employees frustrated with the plan itself won't be satisfied with explanations.",
+                E: "Problematic dismissal of feedback. If most reps feel quotas are unfair and accelerators unrealistic, the plan design likely needs adjustment, not employee attitude correction."
+            },
+            5: {
+                A: "Excellent comprehensive response to transparency requirements. Fixing inequities demonstrates integrity, tighter ranges improve clarity, manager training enables consistent conversation, and progression criteria create clear expectations.",
+                B: "Good immediate action combined with structural improvements. Addressing employees below minimums is essential for credibility when posting ranges publicly.",
+                C: "Acceptable gradual approach but prolonged underpayment relative to posted ranges damages trust and retention. Employees may not wait 12-24 months for equity.",
+                D: "This provides an explanation but not a solution. Employees comparing their pay to posted ranges will remain dissatisfied with explanations that don't result in adjustments.",
+                E: "Problematic minimal compliance approach. While technically legal, wide ranges with employees below minimums signals internal pay problems and damages employer brand with candidates and employees."
+            },
+            6: {
+                A: "Excellent holistic approach that explores motivations beyond money. Understanding root causes enables appropriate response. Awareness that counter-offers often fail prevents false security from retention.",
+                B: "Good market-aligned approach that addresses legitimate gaps while maintaining realistic expectations. Succession planning demonstrates organizational maturity.",
+                C: "Acceptable pragmatic response for urgent business needs, though it may set precedent for leveraging outside offers. Proactive attention to other at-risk employees shows learning.",
+                D: "This reactive approach encourages employees to shop offers for raises. Matching without understanding causes doesn't address underlying issues and often leads to departure anyway.",
+                E: "Problematic rigid policy that ignores context. Sometimes counter-offers address legitimate market misalignment. Letting critical talent go has real costs. Each situation deserves evaluation."
+            },
+            7: {
+                A: "Excellent balanced policy combining market alignment with fair transition. Transparent rationale helps employees understand the approach, grandfathering respects prior decisions, and consistent future application maintains equity.",
+                B: "Good structured approach with fair notice for affected employees. Consistency in application is essential for policy credibility.",
+                C: "Acceptable transition approach but creates long-term equity issues between existing remote employees and new hires doing the same work in the same location.",
+                D: "This position has merits but ignores market realities and local employee perceptions of unfairness. If competitors use geographic differentials, location-agnostic pay may overpay or underpay relative to markets.",
+                E: "Problematic immediate implementation without fair notice. Employees made relocation decisions during unprecedented times. Sudden pay cuts damage trust and may trigger legal issues or departures."
+            },
+            8: {
+                A: "Excellent comprehensive remediation plan. Addressing gaps demonstrates commitment to equity, manager training prevents future disparities, ongoing monitoring ensures sustainability, and legal coordination manages risk appropriately.",
+                B: "Good prioritized approach addressing most significant gaps first while building toward complete resolution. Policy changes prevent new gaps from forming.",
+                C: "Acceptable gradual approach but delays addressing known inequities. Using merit cycle may not adequately address gaps if normal increases don't close disparities.",
+                D: "This prioritizes legal protection over doing what's right. Prolonged inaction while gaps are known increases, not decreases, legal exposure. Employees may discover and publicize the gaps.",
+                E: "Problematic denial that suggests looking for excuses rather than solutions. The audit already controlled for legitimate factors. Seeking additional explanations delays necessary action."
+            }
+        };
+
+        function startSimulation() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('questionsContainer').classList.remove('hidden');
+            document.getElementById('question1').classList.add('active');
+        }
+
+        function selectAnswer(questionNum, answer, score, rating) {
+            // Prevent changing answers
+            if (answers[questionNum]) return;
+
+            // Store answer
+            answers[questionNum] = {
+                answer: answer,
+                score: score,
+                rating: rating,
+                feedback: feedbackData[questionNum][answer]
+            };
+
+            // Update total score
+            totalScore += (score / 100) * 12.5;
+
+            // Disable all options for this question
+            const options = document.querySelectorAll(`#question${questionNum} .response-option`);
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                opt.style.opacity = '0.7';
+            });
+
+            // Highlight selected answer
+            const selectedBtn = event.target;
+            selectedBtn.classList.add(rating);
+            selectedBtn.style.opacity = '1';
+
+            // Show feedback
+            const feedbackPanel = document.getElementById(`feedback${questionNum}`);
+            feedbackPanel.className = `feedback-panel show ${rating}`;
+            feedbackPanel.querySelector('.feedback-score').textContent = `${score}% (${rating.charAt(0).toUpperCase() + rating.slice(1)})`;
+            feedbackPanel.querySelector('.feedback-text').textContent = feedbackData[questionNum][answer];
+
+            // Enable next button
+            document.getElementById(`nextBtn${questionNum}`).disabled = false;
+
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const completed = Object.keys(answers).length;
+            const percentage = (completed / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('progressText').textContent = `${completed} of ${totalQuestions} completed`;
+        }
+
+        function nextQuestion(nextNum) {
+            document.getElementById(`question${nextNum - 1}`).classList.remove('active');
+            document.getElementById(`question${nextNum}`).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showSummary() {
+            document.getElementById('questionsContainer').classList.add('hidden');
+            document.getElementById('progressContainer').classList.add('hidden');
+            document.getElementById('summaryContainer').classList.add('show');
+
+            // Calculate final score
+            const finalScore = Math.round(totalScore);
+            document.getElementById('finalScore').textContent = finalScore;
+
+            // Determine grade
+            let grade, gradeClass;
+            if (finalScore >= 90) { grade = 'A'; gradeClass = 'grade-a'; }
+            else if (finalScore >= 80) { grade = 'B'; gradeClass = 'grade-b'; }
+            else if (finalScore >= 70) { grade = 'C'; gradeClass = 'grade-c'; }
+            else if (finalScore >= 60) { grade = 'D'; gradeClass = 'grade-d'; }
+            else { grade = 'F'; gradeClass = 'grade-f'; }
+
+            const gradeBadge = document.getElementById('gradeBadge');
+            gradeBadge.textContent = `Grade: ${grade}`;
+            gradeBadge.className = `grade-badge ${gradeClass}`;
+
+            // Build summary items
+            const summaryItems = document.getElementById('summaryItems');
+            const itemTitles = [
+                "Salary Compression Issue",
+                "Bonus Pool Allocation",
+                "Benefits Cost Increase",
+                "Commission Plan Complaints",
+                "Pay Transparency Compliance",
+                "Counter-Offer Situation",
+                "Remote Work Pay Differential",
+                "Pay Equity Audit Results"
+            ];
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const answer = answers[i];
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'summary-item';
+                itemDiv.innerHTML = `
+                    <div class="summary-item-header">
+                        <span class="summary-item-title">Item ${i}: ${itemTitles[i-1]}</span>
+                        <span class="summary-item-score ${answer.rating}">${answer.score}%</span>
+                    </div>
+                    <div class="summary-item-response">Your answer: Option ${answer.answer}</div>
+                    <div class="summary-item-feedback">${answer.feedback}</div>
+                `;
+                summaryItems.appendChild(itemDiv);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

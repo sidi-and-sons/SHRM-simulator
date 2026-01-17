@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHRM-CP Certification Preparation | HR Inbox Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .welcome-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .welcome-header h1 {
+            font-size: 2.2rem;
+            color: #4fc3f7;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(79, 195, 247, 0.3);
+        }
+
+        .welcome-header .certification-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+            color: #1a1a2e;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+
+        .welcome-header p {
+            color: #b0b0b0;
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 15px auto;
+            line-height: 1.6;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .module-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #4fc3f7;
+            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.2);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4fc3f7, #29b6f6);
+        }
+
+        .module-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            border-radius: 50%;
+            color: #1a1a2e;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .module-week {
+            display: inline-block;
+            background: rgba(79, 195, 247, 0.2);
+            color: #4fc3f7;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .module-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .module-description {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .module-topics {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+
+        .module-topics li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #d0d0d0;
+            font-size: 0.9rem;
+        }
+
+        .module-topics li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4fc3f7;
+        }
+
+        .module-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            color: #1a1a2e;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .module-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(79, 195, 247, 0.4);
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-section h2 {
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .info-item h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-item p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .scoring-scale {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .score-badge {
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .score-excellent { background: #4caf50; color: white; }
+        .score-good { background: #8bc34a; color: white; }
+        .score-acceptable { background: #ffeb3b; color: #333; }
+        .score-poor { background: #ff9800; color: white; }
+        .score-problematic { background: #f44336; color: white; }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="welcome-header">
+            <h1>HR Professional Inbox Simulation</h1>
+            <span class="certification-badge">SHRM-CP Certification Preparation</span>
+            <p>
+                Practice real-world HR decision-making through interactive inbox scenarios.
+                Each module presents authentic challenges you'll face as an HR professional,
+                helping you prepare for SHRM-CP certification while developing practical skills.
+            </p>
+        </header>
+
+        <div class="modules-grid">
+            <!-- Module 1 -->
+            <div class="module-card">
+                <span class="module-number">1</span>
+                <span class="module-week">Week 10</span>
+                <h2 class="module-title">Talent Management</h2>
+                <p class="module-description">
+                    Navigate strategic talent acquisition, development, and retention challenges
+                    that drive organizational success.
+                </p>
+                <ul class="module-topics">
+                    <li>Competing job offers and negotiations</li>
+                    <li>Succession planning strategies</li>
+                    <li>Employee retention tactics</li>
+                    <li>Internal vs. external hiring decisions</li>
+                </ul>
+                <a href="module1-talent-management.html" class="module-link">Start Module</a>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-card">
+                <span class="module-number">2</span>
+                <span class="module-week">Week 11</span>
+                <h2 class="module-title">Employee Relations</h2>
+                <p class="module-description">
+                    Handle workplace conflicts, investigations, and sensitive employee matters
+                    with professionalism and legal awareness.
+                </p>
+                <ul class="module-topics">
+                    <li>Harassment complaint handling</li>
+                    <li>Workplace substance issues</li>
+                    <li>Religious accommodation requests</li>
+                    <li>Protected concerted activity</li>
+                </ul>
+                <a href="module2-employee-relations.html" class="module-link">Start Module</a>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="module-card">
+                <span class="module-number">3</span>
+                <span class="module-week">Week 12</span>
+                <h2 class="module-title">Employee Engagement</h2>
+                <p class="module-description">
+                    Build and maintain a motivated, committed workforce through strategic
+                    engagement initiatives and culture building.
+                </p>
+                <ul class="module-topics">
+                    <li>Engagement survey response strategies</li>
+                    <li>Remote team connection</li>
+                    <li>Burnout prevention</li>
+                    <li>Recognition program design</li>
+                </ul>
+                <a href="module3-employee-engagement.html" class="module-link">Start Module</a>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="module-card">
+                <span class="module-number">4</span>
+                <span class="module-week">Week 13</span>
+                <h2 class="module-title">Knowledge Management</h2>
+                <p class="module-description">
+                    Capture, organize, and share organizational knowledge to preserve
+                    institutional memory and accelerate learning.
+                </p>
+                <ul class="module-topics">
+                    <li>Expert knowledge transfer</li>
+                    <li>Documentation adoption</li>
+                    <li>Training retention strategies</li>
+                    <li>Cross-team knowledge sharing</li>
+                </ul>
+                <a href="module4-knowledge-management.html" class="module-link">Start Module</a>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="module-card">
+                <span class="module-number">5</span>
+                <span class="module-week">Week 14</span>
+                <h2 class="module-title">Compensation and Rewards</h2>
+                <p class="module-description">
+                    Design and manage fair, competitive total rewards programs that attract,
+                    retain, and motivate talent.
+                </p>
+                <ul class="module-topics">
+                    <li>Salary compression resolution</li>
+                    <li>Bonus allocation decisions</li>
+                    <li>Pay equity compliance</li>
+                    <li>Geographic pay differentials</li>
+                </ul>
+                <a href="module5-compensation-rewards.html" class="module-link">Start Module</a>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="module-card">
+                <span class="module-number">6</span>
+                <span class="module-week">Week 15</span>
+                <h2 class="module-title">Change Management</h2>
+                <p class="module-description">
+                    Lead organizational transformations effectively by managing resistance
+                    and building adoption.
+                </p>
+                <ul class="module-topics">
+                    <li>Major system implementations</li>
+                    <li>Merger and acquisition transitions</li>
+                    <li>Culture integration</li>
+                    <li>Change fatigue management</li>
+                </ul>
+                <a href="module6-change-management.html" class="module-link">Start Module</a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>How the Simulation Works</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Realistic Scenarios</h3>
+                    <p>Each module contains 8 inbox-style email messages presenting real-world HR
+                    challenges you'll encounter in your career.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Multiple Response Options</h3>
+                    <p>Choose from 4-5 response options ranging from excellent approaches to
+                    problematic decisions, each with different point values.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Immediate Feedback</h3>
+                    <p>Receive detailed feedback explaining the consequences and rationale
+                    behind each response option immediately after selection.</p>
+                </div>
+                <div class="info-item">
+                    <h3>100-Point Scale</h3>
+                    <p>Each module is scored on a 100-point scale with equal weight given to
+                    all 8 inbox items (12.5 points each).</p>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 30px;">Scoring Guide</h2>
+            <div class="scoring-scale">
+                <span class="score-badge score-excellent">Excellent (100%)</span>
+                <span class="score-badge score-good">Good (75-80%)</span>
+                <span class="score-badge score-acceptable">Acceptable (50-60%)</span>
+                <span class="score-badge score-poor">Poor (25-35%)</span>
+                <span class="score-badge score-problematic">Problematic (10-20%)</span>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>About SHRM-CP Certification</h2>
+            <p style="color: #b0b0b0; line-height: 1.7;">
+                The SHRM Certified Professional (SHRM-CP) credential is designed for HR professionals
+                engaged in operational roles. These simulations align with SHRM's behavioral competencies
+                and functional areas, providing practical experience with the types of decisions
+                HR professionals face daily. While this simulation is a study aid, always refer to
+                official SHRM resources for complete certification preparation.
+            </p>
+        </div>
+
+        <footer>
+            <p>SHRM-CP Inbox Simulation | Educational Resource for HR Professionals</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">
+                This simulation is an independent educational tool and is not affiliated with or endorsed by SHRM.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

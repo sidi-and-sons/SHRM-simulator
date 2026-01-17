@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Employee Engagement | SHRM-CP Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Employee Engagement</h1>
+            <span class="week-badge">Week 12</span>
+            <p>Foster a motivated, committed workforce through strategic engagement initiatives</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <h2>Welcome to the Employee Engagement Simulation</h2>
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>You will receive 8 inbox items requiring your response</li>
+                    <li>Each item presents a realistic HR scenario</li>
+                    <li>Select the best response from the options provided</li>
+                    <li>You will receive immediate feedback after each selection</li>
+                    <li>Each item is worth 12.5 points (100 points total)</li>
+                    <li>You cannot change your answers once submitted</li>
+                    <li>A summary will be provided at the end of the module</li>
+                </ul>
+            </div>
+            <button class="btn btn-primary" onclick="startSimulation()">Begin Simulation</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progressContainer" class="progress-container hidden">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progressText">0 of 8 completed</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questionsContainer" class="hidden">
+            <!-- Item 1 -->
+            <div id="question1" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 1 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Catherine Yang, VP of Human Resources</div>
+                            <div class="email-subject">Engagement Survey Results Are In</div>
+                            <div class="email-time">Today, 8:45 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi Team,<br><br>
+                        Our annual engagement survey results just came back. Overall engagement dropped from 72% to 58%. The biggest drops were in "I feel valued by leadership" (down 20 points) and "I see a future for myself here" (down 18 points). The CEO is concerned and wants an action plan. How should we approach this?<br><br>
+                        Catherine
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(1, 'A', 100, 'excellent')">
+                            A) Conduct focus groups to understand the root causes behind the scores, share results transparently with employees, develop targeted action plans with leadership input, and establish regular pulse surveys to measure improvement.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'B', 80, 'good')">
+                            B) Analyze the data by department and demographics to identify patterns, meet with managers to discuss findings, and create department-specific action plans with measurable goals.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'C', 55, 'acceptable')">
+                            C) Present the results to leadership with recommendations for improving recognition programs and career development opportunities based on the low-scoring areas.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'D', 30, 'poor')">
+                            D) Implement company-wide initiatives to address the low-scoring areas, such as new recognition programs and leadership training, as quickly as possible.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'E', 10, 'problematic')">
+                            E) Remind employees that survey participation is voluntary and the results may not represent everyone's experience, then schedule the next survey for a better time.
+                        </button>
+                    </div>
+                    <div id="feedback1" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn1" class="btn btn-primary" onclick="nextQuestion(2)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div id="question2" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 2 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Marcus Johnson, Engineering Manager</div>
+                            <div class="email-subject">Remote Team Feels Disconnected</div>
+                            <div class="email-time">Today, 9:30 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hey,<br><br>
+                        Since we went fully remote, my team feels isolated. They've mentioned missing casual conversations and feeling "out of the loop." I notice less collaboration and some people seem to just log hours without engaging. Team meetings feel transactional. Any ideas to rebuild team connection virtually?<br><br>
+                        Marcus
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(2, 'A', 100, 'excellent')">
+                            A) Suggest implementing a mix of virtual social events, dedicated non-work chat channels, regular one-on-ones, cross-functional project pairing, and occasional in-person gatherings to create multiple touchpoints for connection.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'B', 80, 'good')">
+                            B) Recommend structured virtual coffee chats, team building activities during meetings, and creating informal Slack channels for non-work discussions to foster organic relationship building.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'C', 55, 'acceptable')">
+                            C) Suggest starting team meetings with personal check-ins and scheduling monthly virtual happy hours to recreate some of the social aspects of office work.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'D', 30, 'poor')">
+                            D) Recommend requiring cameras on during all meetings so people feel more present and connected with their colleagues.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'E', 10, 'problematic')">
+                            E) Suggest that remote work naturally has less social connection, and the focus should be on productivity metrics rather than trying to recreate office culture.
+                        </button>
+                    </div>
+                    <div id="feedback2" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn2" class="btn btn-primary" onclick="nextQuestion(3)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div id="question3" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 3 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Diana Ross, Customer Success Director</div>
+                            <div class="email-subject">Employee Burnout Concerns</div>
+                            <div class="email-time">Today, 10:15 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi HR,<br><br>
+                        My team has been working 60+ hour weeks for the past 3 months due to a major client implementation. They're exhausted, and I'm seeing signs of burnout - missed deadlines, short tempers, increased sick days. I've asked for more resources but was told the budget doesn't allow it. How can I support my team without additional headcount?<br><br>
+                        Diana
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(3, 'A', 100, 'excellent')">
+                            A) Help Diana prioritize and defer non-critical work, implement temporary schedule flexibility, recognize individual contributions, advocate for compensatory time off, and build a business case showing burnout costs vs. resource investment.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'B', 80, 'good')">
+                            B) Recommend immediate workload analysis to identify what can be delayed, ensure employees take their PTO, recognize extra efforts publicly, and schedule regular wellness check-ins.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'C', 55, 'acceptable')">
+                            C) Suggest Diana implement mandatory lunch breaks and earlier end times, encourage use of EAP resources, and plan a team celebration once the project completes.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'D', 30, 'poor')">
+                            D) Remind Diana that high-intensity periods are normal in business and focus on keeping morale up until the project is complete.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'E', 10, 'problematic')">
+                            E) Advise Diana that employee resilience is key and those who can't handle the pressure may not be the right fit for the demands of the role.
+                        </button>
+                    </div>
+                    <div id="feedback3" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn3" class="btn btn-primary" onclick="nextQuestion(4)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div id="question4" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 4 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">James Wright, Regional Sales Manager</div>
+                            <div class="email-subject">New Recognition Program Ideas</div>
+                            <div class="email-time">Today, 11:00 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hey,<br><br>
+                        I want to implement a recognition program for my sales team. I'm thinking monthly MVP awards with gift cards. But I'm worried it might demotivate people who never win, and some reps have easier territories. Also, my top performers say they don't care about public recognition - they want money. What approach would work best?<br><br>
+                        James
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(4, 'A', 100, 'excellent')">
+                            A) Design a multi-faceted program with peer-to-peer recognition, individual improvement awards, team achievements, and choices between public acknowledgment or private rewards to address different motivations and fairness concerns.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'B', 80, 'good')">
+                            B) Recommend recognition categories that go beyond sales numbers (customer feedback, mentoring others, biggest improvement) and let winners choose between public recognition or bonus compensation.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'C', 55, 'acceptable')">
+                            C) Suggest focusing on spot bonuses tied to specific achievements rather than monthly awards, removing the competitive element while still recognizing contributions.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'D', 30, 'poor')">
+                            D) Recommend keeping recognition simple with quarterly bonuses based on sales targets, since money is what salespeople are most motivated by.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'E', 10, 'problematic')">
+                            E) Advise against formal recognition programs entirely since they often create more resentment than motivation, especially in competitive sales environments.
+                        </button>
+                    </div>
+                    <div id="feedback4" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn4" class="btn btn-primary" onclick="nextQuestion(5)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div id="question5" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 5 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Priya Sharma, Learning & Development Manager</div>
+                            <div class="email-subject">Low Participation in Development Programs</div>
+                            <div class="email-time">Today, 1:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        We invested significantly in a new learning platform with hundreds of courses, but participation is only 12%. Employees say they don't have time to take courses during work hours, and managers aren't encouraging it. How do we increase engagement with professional development when everyone is so busy?<br><br>
+                        Priya
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(5, 'A', 100, 'excellent')">
+                            A) Work with leadership to allocate dedicated learning time, tie development to career progression, include manager goals for team development, create learning paths aligned with role needs, and measure completion in performance discussions.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'B', 80, 'good')">
+                            B) Recommend making learning part of the work expectation by blocking calendar time, connecting courses to promotion criteria, and holding managers accountable for team development.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'C', 55, 'acceptable')">
+                            C) Suggest curating a smaller selection of high-impact courses rather than overwhelming options, and promote completion through gamification and visible leaderboards.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'D', 30, 'poor')">
+                            D) Recommend making certain courses mandatory for compliance and role requirements to ensure baseline participation.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'E', 10, 'problematic')">
+                            E) Suggest that employees who truly want to develop will make time on their own, and those who don't participate may not be growth-oriented.
+                        </button>
+                    </div>
+                    <div id="feedback5" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn5" class="btn btn-primary" onclick="nextQuestion(6)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div id="question6" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 6 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Robert Chen, Facilities Director</div>
+                            <div class="email-subject">Return to Office Resistance</div>
+                            <div class="email-time">Today, 2:15 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello,<br><br>
+                        Leadership mandated a return to office 3 days per week starting next month. I'm getting angry emails from employees who moved during the pandemic or have caregiving responsibilities. Several high performers have said they'll quit rather than return. We need people back for collaboration, but I don't want to lose talent. Thoughts?<br><br>
+                        Robert
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(6, 'A', 100, 'excellent')">
+                            A) Recommend a phased approach with flexibility for individual circumstances, create an exception process for hardship cases, communicate the business rationale clearly, and redesign office days to maximize the collaboration that justifies in-person work.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'B', 80, 'good')">
+                            B) Suggest piloting the policy with willing teams first, gathering feedback, addressing concerns through an accommodation process, and ensuring in-office days have purposeful collaborative activities.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'C', 55, 'acceptable')">
+                            C) Recommend clear communication about the policy reasons and timeline, while establishing an HR process for reviewing individual accommodation requests.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'D', 30, 'poor')">
+                            D) Advise holding firm on the mandate since exceptions will create resentment among those who comply, while accepting that some turnover is inevitable with policy changes.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'E', 10, 'problematic')">
+                            E) Suggest that employees who threaten to quit are being manipulative, and the company shouldn't let individual preferences override business decisions.
+                        </button>
+                    </div>
+                    <div id="feedback6" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn6" class="btn btn-primary" onclick="nextQuestion(7)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div id="question7" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 7 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Michelle Torres, Department Director</div>
+                            <div class="email-subject">Manager Undermining Engagement Efforts</div>
+                            <div class="email-time">Today, 3:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        One of my managers, Kevin, has a team with the lowest engagement scores. He dismisses surveys as "HR fluff," openly mocks team-building activities, and tells his team that "work is work, not a party." His team produces results, but they're miserable and turnover is twice the company average. How do I address this?<br><br>
+                        Michelle
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(7, 'A', 100, 'excellent')">
+                            A) Help Michelle present Kevin with data connecting his team's low engagement to turnover costs and productivity impacts. Include leadership behaviors in his performance expectations and provide coaching on effective management practices.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'B', 80, 'good')">
+                            B) Recommend that Michelle have a direct conversation with Kevin about how his behaviors affect team engagement and retention, set clear expectations for improvement, and offer leadership development resources.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'C', 55, 'acceptable')">
+                            C) Suggest Michelle include engagement metrics in Kevin's performance goals and make clear that his compensation will be partially tied to team retention and satisfaction.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'D', 30, 'poor')">
+                            D) Advise accepting that Kevin's management style works for some situations, and focus on ensuring his team has access to engagement resources even if he doesn't promote them.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'E', 10, 'problematic')">
+                            E) Suggest that since Kevin's team delivers results, his approach shouldn't be challenged. Different managers have different styles, and not everyone needs to embrace engagement initiatives.
+                        </button>
+                    </div>
+                    <div id="feedback7" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn7" class="btn btn-primary" onclick="nextQuestion(8)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div id="question8" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 8 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Angela Hayes, Culture & Engagement Lead</div>
+                            <div class="email-subject">Employee Resource Groups Need Support</div>
+                            <div class="email-time">Today, 4:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        Our Employee Resource Groups (ERGs) are struggling. Leaders are burning out because it's all volunteer work on top of their jobs. Membership is declining because events happen during work hours but managers won't release people. Executive sponsors rarely attend. How do we revitalize these important groups?<br><br>
+                        Angela
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(8, 'A', 100, 'excellent')">
+                            A) Propose allocating dedicated time for ERG leadership, creating policy requiring managers to release employees for ERG activities, holding executive sponsors accountable through regular engagement, and connecting ERG involvement to professional development.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'B', 80, 'good')">
+                            B) Recommend formalizing ERG leader roles with protected time, providing small budgets for activities, setting clear expectations for executive sponsors, and communicating the business value of ERGs to managers.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'C', 55, 'acceptable')">
+                            C) Suggest reducing the scope of ERG activities to be more manageable, rotating leadership to prevent burnout, and scheduling events during lunch hours to minimize work conflicts.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'D', 30, 'poor')">
+                            D) Recommend consolidating multiple ERGs into fewer groups to reduce the leadership burden and focus resources on the most active communities.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'E', 10, 'problematic')">
+                            E) Accept that ERGs naturally have cycles of activity and decline. If membership is dropping, perhaps the groups have served their purpose and resources could be redirected.
+                        </button>
+                    </div>
+                    <div id="feedback8" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn8" class="btn btn-primary" onclick="showSummary()" disabled>View Results</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Screen -->
+        <div id="summaryContainer" class="summary-container">
+            <div class="summary-header">
+                <h2>Module Complete!</h2>
+                <div class="final-score" id="finalScore">0</div>
+                <div class="score-label">out of 100 points</div>
+                <div id="gradeBadge" class="grade-badge"></div>
+            </div>
+
+            <h3 style="margin: 20px 0; color: #4fc3f7;">Your Responses</h3>
+            <div id="summaryItems" class="summary-items"></div>
+
+            <div class="nav-buttons" style="margin-top: 30px;">
+                <button class="btn btn-secondary" onclick="window.print()">Print Results</button>
+                <a href="index.html" class="btn btn-primary" style="text-decoration: none;">Return to Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulation state
+        let currentQuestion = 1;
+        let totalQuestions = 8;
+        let answers = {};
+        let totalScore = 0;
+
+        // Feedback data for each question
+        const feedbackData = {
+            1: {
+                A: "Excellent comprehensive approach. Focus groups uncover root causes beyond numbers, transparency builds trust, targeted action plans address specific issues, and pulse surveys enable agile response. This demonstrates strategic engagement management.",
+                B: "Good analytical approach that identifies patterns and involves managers. Department-specific plans recognize that engagement drivers vary. However, adding employee voice through qualitative research would strengthen the approach.",
+                C: "Acceptable but jumps to solutions before fully diagnosing problems. Recommendations without deeper understanding of causes may miss the mark. Employee input should inform the action plan.",
+                D: "This implements solutions without understanding causes. Quick implementation may address symptoms rather than root issues. The lack of employee involvement in developing solutions often leads to ineffective programs.",
+                E: "Problematic dismissal of significant feedback. Declining to act on survey results damages trust and future participation. Employees shared concerns that deserve investigation and response."
+            },
+            2: {
+                A: "Excellent multi-pronged approach addressing both structured and organic connection opportunities. The combination of virtual and occasional in-person interactions, plus work and non-work touchpoints, creates a comprehensive connection strategy.",
+                B: "Good variety of recommendations that address different types of connection needs. Structured and informal elements together create more natural relationship building opportunities.",
+                C: "Acceptable starting point but may not be enough to counter feelings of isolation. Monthly events are too infrequent, and meeting check-ins can feel performative without other touchpoints.",
+                D: "This mandates behavior rather than creating genuine connection. Forced camera requirements can cause resentment and don't address the deeper isolation issues. Autonomy matters in remote work.",
+                E: "Problematic dismissal of social needs. Research shows remote employee engagement and retention depend significantly on connection and belonging. Ignoring this guarantees the problems will worsen."
+            },
+            3: {
+                A: "Excellent holistic approach addressing immediate relief and systemic issues. Workload reduction, recognition, and building a business case for resources shows strategic thinking. Advocacy for compensatory time demonstrates employee-centric support.",
+                B: "Good immediate actions that address visible symptoms of burnout. Workload analysis, enforced PTO, and wellness focus are appropriate responses, though building a case for systemic change would strengthen it.",
+                C: "Acceptable interventions but may be insufficient for severe burnout. Mandatory breaks are helpful but don't reduce workload. Post-project celebration is too late if people burn out first.",
+                D: "This normalizes unsustainable practices. Three months of 60-hour weeks is not a temporary spike - it's a systemic issue. Dismissing employee wellbeing erodes trust and increases turnover.",
+                E: "Problematic response that blames employees for systemic workload issues. This approach will accelerate turnover, damage employer brand, and create legal risks if burnout leads to health issues."
+            },
+            4: {
+                A: "Excellent inclusive design that addresses fairness, diverse motivations, and different recognition preferences. Peer recognition broadens opportunities, improvement awards reduce favoritism concerns, and choice respects individual preferences.",
+                B: "Good approach that expands recognition beyond pure metrics and addresses the preference for monetary vs. public rewards. Multiple categories create more winners and reduce competitive negativity.",
+                C: "Acceptable simplified approach but misses the opportunity for peer and team recognition. Spot bonuses are transactional and may not build the engagement that comes from acknowledgment and appreciation.",
+                D: "This oversimplifies motivation. While salespeople value compensation, recognition research shows money alone doesn't sustain engagement. This approach also doesn't address fairness concerns about territory differences.",
+                E: "Problematic avoidance of recognition's well-documented benefits. Properly designed programs increase engagement without creating resentment. Abandoning recognition cedes a valuable engagement lever."
+            },
+            5: {
+                A: "Excellent systemic approach that addresses root causes - time, incentives, manager support, and relevance. Connecting learning to career outcomes and making it a managed expectation creates sustainable participation.",
+                B: "Good focus on structural enablers of learning. Blocking time and manager accountability address the stated barriers. Promotion connection creates meaningful incentive for participation.",
+                C: "Acceptable incremental improvement but doesn't address the core barrier of time and manager support. Gamification can help but won't overcome structural obstacles to participation.",
+                D: "This creates compliance without engagement. Mandatory training breeds resentment and checkbox completion. True development requires intrinsic motivation that comes from seeing career value.",
+                E: "Problematic blame-the-employee response. The issue is structural - employees lack time and manager support. Attributing low participation to employee character ignores organizational responsibility."
+            },
+            6: {
+                A: "Excellent balanced approach respecting both business needs and employee concerns. Phased implementation allows adjustment, exception processes address hardships, and purposeful in-office design justifies the policy.",
+                B: "Good piloting approach that gathers data before full rollout. Feedback loops and accommodation processes show respect for employee concerns while moving toward business objectives.",
+                C: "Acceptable communication focus, but waiting until policy launch to address individual concerns may be too late. Proactive outreach and flexibility options would prevent avoidable exits.",
+                D: "This prioritizes consistency over talent retention. Losing high performers has real costs. Some flexibility in implementation usually generates better outcomes than rigid enforcement.",
+                E: "Problematic dismissal of legitimate employee concerns. People made major life decisions during the pandemic. Labeling concerned employees as manipulative damages trust and accelerates departures."
+            },
+            7: {
+                A: "Excellent data-driven approach that speaks to business impact. Connecting engagement to turnover costs makes it a performance issue, not just HR preference. Coaching provides support for behavior change.",
+                B: "Good direct approach that sets clear expectations and offers development resources. Making the conversation about management effectiveness rather than personality makes it actionable.",
+                C: "Acceptable accountability approach but may feel punitive without the coaching component. Metrics without development support may not actually change Kevin's behavior or beliefs.",
+                D: "This enables a manager who actively undermines company culture. Kevin's results come at the cost of unsustainable turnover. Short-term production doesn't offset long-term talent pipeline damage.",
+                E: "Problematic acceptance of destructive management. The double turnover rate is a quantifiable problem. Managers who openly mock company initiatives create permission for others to disengage."
+            },
+            8: {
+                A: "Excellent structural approach that treats ERG leadership as valued work. Protected time, manager requirements, and executive accountability address the root causes of burnout and declining participation.",
+                B: "Good formalization approach that legitimizes ERG work. Budget allocation, protected time, and executive expectations create institutional support that volunteer-only models lack.",
+                C: "Acceptable coping strategies but don't address root issues. Reducing scope may help short-term but signals declining organizational commitment. Lunch meetings still require release from work.",
+                D: "This may eliminate groups that serve distinct communities with different needs. Consolidation can marginalize smaller identity groups and reduce the belonging benefits ERGs provide.",
+                E: "Problematic abandonment of DEI infrastructure. ERGs are declining because of structural barriers, not lack of interest. Redirecting resources signals deprioritization of inclusion efforts."
+            }
+        };
+
+        function startSimulation() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('questionsContainer').classList.remove('hidden');
+            document.getElementById('question1').classList.add('active');
+        }
+
+        function selectAnswer(questionNum, answer, score, rating) {
+            // Prevent changing answers
+            if (answers[questionNum]) return;
+
+            // Store answer
+            answers[questionNum] = {
+                answer: answer,
+                score: score,
+                rating: rating,
+                feedback: feedbackData[questionNum][answer]
+            };
+
+            // Update total score
+            totalScore += (score / 100) * 12.5;
+
+            // Disable all options for this question
+            const options = document.querySelectorAll(`#question${questionNum} .response-option`);
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                opt.style.opacity = '0.7';
+            });
+
+            // Highlight selected answer
+            const selectedBtn = event.target;
+            selectedBtn.classList.add(rating);
+            selectedBtn.style.opacity = '1';
+
+            // Show feedback
+            const feedbackPanel = document.getElementById(`feedback${questionNum}`);
+            feedbackPanel.className = `feedback-panel show ${rating}`;
+            feedbackPanel.querySelector('.feedback-score').textContent = `${score}% (${rating.charAt(0).toUpperCase() + rating.slice(1)})`;
+            feedbackPanel.querySelector('.feedback-text').textContent = feedbackData[questionNum][answer];
+
+            // Enable next button
+            document.getElementById(`nextBtn${questionNum}`).disabled = false;
+
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const completed = Object.keys(answers).length;
+            const percentage = (completed / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('progressText').textContent = `${completed} of ${totalQuestions} completed`;
+        }
+
+        function nextQuestion(nextNum) {
+            document.getElementById(`question${nextNum - 1}`).classList.remove('active');
+            document.getElementById(`question${nextNum}`).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showSummary() {
+            document.getElementById('questionsContainer').classList.add('hidden');
+            document.getElementById('progressContainer').classList.add('hidden');
+            document.getElementById('summaryContainer').classList.add('show');
+
+            // Calculate final score
+            const finalScore = Math.round(totalScore);
+            document.getElementById('finalScore').textContent = finalScore;
+
+            // Determine grade
+            let grade, gradeClass;
+            if (finalScore >= 90) { grade = 'A'; gradeClass = 'grade-a'; }
+            else if (finalScore >= 80) { grade = 'B'; gradeClass = 'grade-b'; }
+            else if (finalScore >= 70) { grade = 'C'; gradeClass = 'grade-c'; }
+            else if (finalScore >= 60) { grade = 'D'; gradeClass = 'grade-d'; }
+            else { grade = 'F'; gradeClass = 'grade-f'; }
+
+            const gradeBadge = document.getElementById('gradeBadge');
+            gradeBadge.textContent = `Grade: ${grade}`;
+            gradeBadge.className = `grade-badge ${gradeClass}`;
+
+            // Build summary items
+            const summaryItems = document.getElementById('summaryItems');
+            const itemTitles = [
+                "Engagement Survey Results",
+                "Remote Team Disconnection",
+                "Employee Burnout",
+                "Recognition Program Design",
+                "Low L&D Participation",
+                "Return to Office Resistance",
+                "Manager Undermining Engagement",
+                "ERG Support Needs"
+            ];
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const answer = answers[i];
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'summary-item';
+                itemDiv.innerHTML = `
+                    <div class="summary-item-header">
+                        <span class="summary-item-title">Item ${i}: ${itemTitles[i-1]}</span>
+                        <span class="summary-item-score ${answer.rating}">${answer.score}%</span>
+                    </div>
+                    <div class="summary-item-response">Your answer: Option ${answer.answer}</div>
+                    <div class="summary-item-feedback">${answer.feedback}</div>
+                `;
+                summaryItems.appendChild(itemDiv);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

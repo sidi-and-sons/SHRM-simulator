@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Employee Relations | SHRM-CP Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Employee Relations</h1>
+            <span class="week-badge">Week 11</span>
+            <p>Handle workplace conflicts, investigations, and employee concerns professionally</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <h2>Welcome to the Employee Relations Simulation</h2>
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>You will receive 8 inbox items requiring your response</li>
+                    <li>Each item presents a realistic HR scenario</li>
+                    <li>Select the best response from the options provided</li>
+                    <li>You will receive immediate feedback after each selection</li>
+                    <li>Each item is worth 12.5 points (100 points total)</li>
+                    <li>You cannot change your answers once submitted</li>
+                    <li>A summary will be provided at the end of the module</li>
+                </ul>
+            </div>
+            <button class="btn btn-primary" onclick="startSimulation()">Begin Simulation</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progressContainer" class="progress-container hidden">
+            <div class="progress-header">
+                <span>Progress</span>
+                <span id="progressText">0 of 8 completed</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questionsContainer" class="hidden">
+            <!-- Item 1 -->
+            <div id="question1" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 1 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Sandra Williams, Account Manager</div>
+                            <div class="email-subject">Harassment Complaint - Confidential</div>
+                            <div class="email-time">Today, 8:30 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi HR,<br><br>
+                        I need to report something that's been happening. My supervisor, James, makes comments about my appearance almost daily. Yesterday he said I "looked hot" in my dress and asked if I was "trying to impress someone." When I don't respond, he gets cold and assigns me less desirable accounts. I'm afraid of retaliation but can't take this anymore. Please help.<br><br>
+                        Sandra
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(1, 'A', 100, 'excellent')">
+                            A) Thank Sandra for coming forward, assure her of confidentiality to the extent possible, explain the investigation process and anti-retaliation protections, and immediately begin documenting the complaint while arranging a private meeting.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'B', 75, 'good')">
+                            B) Schedule an immediate confidential meeting with Sandra to gather detailed information, document everything, and inform her that you're obligated to investigate and will protect her from retaliation.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'C', 50, 'acceptable')">
+                            C) Respond to Sandra expressing concern and ask her to document specific incidents with dates before scheduling a formal meeting to discuss next steps.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'D', 25, 'poor')">
+                            D) Suggest Sandra first try telling James directly that his comments are unwelcome, as many workplace conflicts can be resolved through direct communication.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(1, 'E', 10, 'problematic')">
+                            E) Forward the email to James's manager to handle since it's a supervisory relationship issue, keeping HR informed of the resolution.
+                        </button>
+                    </div>
+                    <div id="feedback1" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn1" class="btn btn-primary" onclick="nextQuestion(2)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div id="question2" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 2 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Tom Rodriguez, Warehouse Supervisor</div>
+                            <div class="email-subject">Employee Smells Like Marijuana</div>
+                            <div class="email-time">Today, 9:45 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        I need guidance on a situation. One of my forklift operators, Derek, came in today smelling strongly of marijuana. He seems to be functioning fine, but the smell is unmistakable. Other employees have noticed too. We're in a state where recreational marijuana is legal, but he operates heavy machinery. What should I do?<br><br>
+                        Tom
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(2, 'A', 100, 'excellent')">
+                            A) Instruct Tom to immediately remove Derek from safety-sensitive duties, privately document observations, conduct a reasonable suspicion assessment following company policy, and arrange for testing if warranted while ensuring Derek doesn't drive himself.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'B', 80, 'good')">
+                            B) Have Tom remove Derek from forklift operation, document the observations with another witness, and send him for reasonable suspicion drug testing following established protocols.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'C', 55, 'acceptable')">
+                            C) Tell Tom to have a conversation with Derek about the company's drug policy and observe him for any signs of impairment before deciding on further action.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'D', 30, 'poor')">
+                            D) Advise Tom that since marijuana is legal in your state and Derek appears functional, he should monitor the situation but can't take action based on smell alone.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(2, 'E', 10, 'problematic')">
+                            E) Tell Tom to immediately terminate Derek for violating the drug-free workplace policy, as operating machinery while potentially impaired is grounds for instant dismissal.
+                        </button>
+                    </div>
+                    <div id="feedback2" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn2" class="btn btn-primary" onclick="nextQuestion(3)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div id="question3" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 3 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Patricia Chen, Department Manager</div>
+                            <div class="email-subject">Religious Accommodation Request</div>
+                            <div class="email-time">Today, 10:30 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello,<br><br>
+                        Ahmed, one of my team members, requested to take breaks for prayer five times daily and asked for Fridays off for religious observance. We're already short-staffed, and Fridays are our busiest day. The rest of the team is frustrated about covering for him. How do I balance his religious needs with operational requirements?<br><br>
+                        Patricia
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(3, 'A', 100, 'excellent')">
+                            A) Work with Patricia and Ahmed to explore reasonable accommodations such as flexible scheduling, shift swaps, or adjusted break times that meet religious needs while minimizing operational impact, documenting the interactive process.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'B', 75, 'good')">
+                            B) Meet with Ahmed to understand his specific needs, then collaborate with Patricia to identify creative solutions like modified schedules or remote work options that could accommodate both religious practice and business needs.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'C', 50, 'acceptable')">
+                            C) Allow the prayer breaks since they're brief, but explain that guaranteed Fridays off may not be possible and explore whether Ahmed could work alternative days or hours.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'D', 30, 'poor')">
+                            D) Deny the Friday request since it would cause undue hardship on the team and operations, but allow the prayer breaks as a partial accommodation.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(3, 'E', 10, 'problematic')">
+                            E) Explain that while you respect his beliefs, the operational demands of the job make it impossible to accommodate these requests and he may need to consider whether the position is a good fit.
+                        </button>
+                    </div>
+                    <div id="feedback3" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn3" class="btn btn-primary" onclick="nextQuestion(4)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div id="question4" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 4 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Kevin O'Brien, IT Director</div>
+                            <div class="email-subject">Employee Posted Complaints on Social Media</div>
+                            <div class="email-time">Today, 11:15 AM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        One of my employees, Maya, posted on Twitter/X: "My company pays poverty wages while executives get million-dollar bonuses. Workers are organizing to demand fair pay. Who's with us? #UnionStrong" Several employees have liked and shared it. I want to discipline her for damaging our reputation. Can I?<br><br>
+                        Kevin
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(4, 'A', 100, 'excellent')">
+                            A) Advise Kevin that Maya's post likely constitutes protected concerted activity under the NLRA. Focus instead on understanding employee concerns about compensation through proper channels like town halls or surveys.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'B', 75, 'good')">
+                            B) Explain that disciplining employees for discussing wages or working conditions with coworkers is legally risky. Suggest addressing the underlying compensation concerns rather than the social media post.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'C', 55, 'acceptable')">
+                            C) Review the company's social media policy with Kevin and consult with legal counsel before taking any action, as posts about wages and working conditions may be protected.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'D', 30, 'poor')">
+                            D) Recommend having a conversation with Maya about professional representation of the company online and remind her of the social media policy without formal discipline.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(4, 'E', 10, 'problematic')">
+                            E) Support Kevin in issuing a written warning for violating the social media policy, as employees shouldn't publicly disparage the company that employs them.
+                        </button>
+                    </div>
+                    <div id="feedback4" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn4" class="btn btn-primary" onclick="nextQuestion(5)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div id="question5" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 5 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Rachel Foster, Team Lead</div>
+                            <div class="email-subject">Conflict Between Two Team Members</div>
+                            <div class="email-time">Today, 1:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hello HR,<br><br>
+                        I have two employees, Jake and Maria, who can't seem to work together. They argue constantly, refuse to collaborate, and it's affecting the whole team. Each blames the other. Jake says Maria undermines his ideas in meetings. Maria says Jake takes credit for her work. I've tried talking to both, but nothing changes. Help!<br><br>
+                        Rachel
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(5, 'A', 100, 'excellent')">
+                            A) Meet separately with Jake and Maria to understand each perspective, then facilitate a structured mediation session focused on specific behaviors, clear expectations, and documented agreements, with follow-up accountability measures.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'B', 80, 'good')">
+                            B) Help Rachel document specific incidents, then conduct individual meetings to understand root causes before bringing both parties together with clear behavioral expectations and consequences.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'C', 55, 'acceptable')">
+                            C) Recommend that Rachel clearly communicate behavioral expectations in writing to both employees, with consequences for continued conflicts affecting team performance.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'D', 30, 'poor')">
+                            D) Suggest separating Jake and Maria by assigning them to different projects or teams to eliminate the need for direct collaboration.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(5, 'E', 10, 'problematic')">
+                            E) Advise Rachel to let them work it out themselves, as involving HR in personality conflicts can escalate situations unnecessarily.
+                        </button>
+                    </div>
+                    <div id="feedback5" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn5" class="btn btn-primary" onclick="nextQuestion(6)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div id="question6" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 6 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Brian Thompson, Sales Manager</div>
+                            <div class="email-subject">Employee Threatening Legal Action</div>
+                            <div class="email-time">Today, 2:15 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Urgent,<br><br>
+                        I gave Diane a negative performance review last week - all documented and accurate. Today she stormed into my office saying the review was "discriminatory" because she's the only woman on the team and threatened to sue. She has been underperforming for months, and I have documentation. But now I'm worried about taking further action. What should I do?<br><br>
+                        Brian
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(6, 'A', 100, 'excellent')">
+                            A) Review all documentation for consistency, ensure Diane was evaluated using the same criteria as male colleagues, continue to address performance issues fairly while documenting everything, and consult with legal counsel about the threat.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'B', 80, 'good')">
+                            B) Meet with Brian to review his documentation and compare how he's evaluated all team members, ensure he continues consistent performance management, and loop in legal to prepare for potential claims.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'C', 55, 'acceptable')">
+                            C) Advise Brian to continue documenting performance issues but hold off on further discipline until legal reviews the situation and confirms the documentation is defensible.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'D', 30, 'poor')">
+                            D) Recommend Brian soften his approach with Diane to avoid escalation, perhaps revising the review to be less negative while still noting areas for improvement.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(6, 'E', 10, 'problematic')">
+                            E) Since Diane threatened legal action, immediately put all performance management on hold and refer everything to legal before taking any further steps.
+                        </button>
+                    </div>
+                    <div id="feedback6" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn6" class="btn btn-primary" onclick="nextQuestion(7)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div id="question7" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 7 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Lisa Martinez, Operations Manager</div>
+                            <div class="email-subject">FMLA Leave Suspicion</div>
+                            <div class="email-time">Today, 3:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        Hi,<br><br>
+                        Carlos has been on intermittent FMLA leave for chronic back pain - usually Mondays and Fridays. Another employee sent me a Facebook photo of Carlos at a music festival last weekend, standing and dancing. If his back is so bad he can't work, how is he partying? I think he's abusing FMLA. Can I investigate?<br><br>
+                        Lisa
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(7, 'A', 100, 'excellent')">
+                            A) Explain that a single photo doesn't prove FMLA abuse, as chronic conditions can have good and bad days. If there's a pattern of suspicious behavior, request recertification through proper channels rather than social media surveillance.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'B', 75, 'good')">
+                            B) Advise Lisa that while concern is understandable, one photo isn't conclusive. If she has documented concerns about a pattern, HR can request updated medical certification to verify the ongoing need.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'C', 50, 'acceptable')">
+                            C) Note the concern and add it to Carlos's file, then monitor the situation to see if a pattern of questionable FMLA use emerges before taking action.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'D', 30, 'poor')">
+                            D) Have a conversation with Carlos about the photo and ask him to explain how attending a festival is consistent with his medical condition preventing work.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(7, 'E', 10, 'problematic')">
+                            E) Use the photo as evidence to deny future FMLA requests and initiate investigation for potential fraud, as employees shouldn't be partying while claiming they can't work.
+                        </button>
+                    </div>
+                    <div id="feedback7" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn7" class="btn btn-primary" onclick="nextQuestion(8)" disabled>Next Item</button>
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div id="question8" class="question-container">
+                <div class="inbox-item">
+                    <span class="item-number">Item 8 of 8</span>
+                    <div class="email-header">
+                        <div class="email-icon">📧</div>
+                        <div class="email-meta">
+                            <div class="email-from">Anonymous via Ethics Hotline</div>
+                            <div class="email-subject">Possible Favoritism/Fraud Report</div>
+                            <div class="email-time">Today, 4:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        I'm reporting concerns about the Finance Director, Steven. He recently hired his nephew, Tyler, who has no relevant experience. Tyler often leaves early, takes long lunches, but always gets excellent reviews. I've also seen Steven approve Tyler's questionable expense reports without review. Others have noticed but are afraid to speak up because Steven controls promotions.<br><br>
+                        - Concerned Employee
+                    </div>
+                    <div class="response-options">
+                        <button class="response-option" onclick="selectAnswer(8, 'A', 100, 'excellent')">
+                            A) Take the report seriously and initiate a confidential investigation covering the hiring process, time records, expense reports, and performance reviews. Involve internal audit and ensure the investigation is conducted by someone outside Steven's influence.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'B', 80, 'good')">
+                            B) Document the complaint, discreetly review Tyler's hiring paperwork and expense reports with internal audit, and compare his treatment to other employees before determining investigation scope.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'C', 55, 'acceptable')">
+                            C) Acknowledge the report and conduct a preliminary review of available records to determine if there's enough evidence to warrant a formal investigation.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'D', 30, 'poor')">
+                            D) Ask the anonymous reporter to provide specific evidence or come forward with their identity so you can properly investigate the claims.
+                        </button>
+                        <button class="response-option" onclick="selectAnswer(8, 'E', 10, 'problematic')">
+                            E) Inform Steven about the complaint and ask him to address the concerns, since he should have the opportunity to explain before any formal investigation.
+                        </button>
+                    </div>
+                    <div id="feedback8" class="feedback-panel">
+                        <div class="feedback-header">
+                            <span class="feedback-label">Feedback</span>
+                            <span class="feedback-score"></span>
+                        </div>
+                        <div class="feedback-text"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="nextBtn8" class="btn btn-primary" onclick="showSummary()" disabled>View Results</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Screen -->
+        <div id="summaryContainer" class="summary-container">
+            <div class="summary-header">
+                <h2>Module Complete!</h2>
+                <div class="final-score" id="finalScore">0</div>
+                <div class="score-label">out of 100 points</div>
+                <div id="gradeBadge" class="grade-badge"></div>
+            </div>
+
+            <h3 style="margin: 20px 0; color: #4fc3f7;">Your Responses</h3>
+            <div id="summaryItems" class="summary-items"></div>
+
+            <div class="nav-buttons" style="margin-top: 30px;">
+                <button class="btn btn-secondary" onclick="window.print()">Print Results</button>
+                <a href="index.html" class="btn btn-primary" style="text-decoration: none;">Return to Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulation state
+        let currentQuestion = 1;
+        let totalQuestions = 8;
+        let answers = {};
+        let totalScore = 0;
+
+        // Feedback data for each question
+        const feedbackData = {
+            1: {
+                A: "Excellent response demonstrating proper harassment complaint handling. You've acknowledged the complaint seriously, explained the process, addressed retaliation concerns, and initiated proper documentation - all critical elements of a professional investigation.",
+                B: "Good approach that prioritizes meeting and documentation. However, the initial response should also reassure Sandra about confidentiality and anti-retaliation protections to encourage her full cooperation.",
+                C: "Acceptable but delays the process. While documentation is important, asking the complainant to do this work first may discourage reporting. HR should gather details directly and begin documenting immediately.",
+                D: "This is inappropriate for harassment complaints involving a supervisor. Direct confrontation puts the complainant at risk and ignores the power imbalance. HR has an obligation to investigate when informed.",
+                E: "Problematic response that violates confidentiality and proper investigation protocols. The accused's manager may have relationships or biases that compromise the investigation. HR must handle harassment complaints directly."
+            },
+            2: {
+                A: "Excellent response covering all critical safety and legal considerations. Removing from safety-sensitive duties is immediate priority, proper documentation protects the company, and ensuring safe transportation demonstrates duty of care.",
+                B: "Good response that addresses immediate safety concerns and follows proper testing protocols. The focus on documentation and witnesses strengthens the company's position if challenged.",
+                C: "Acceptable but delays action on a safety-sensitive situation. A forklift operator with suspected impairment poses immediate risk. Policy conversations should follow, not precede, safety actions.",
+                D: "This conflates legality with workplace policy. While recreational use may be legal, employers can still prohibit impairment during work hours, especially for safety-sensitive positions. This exposes the company to liability.",
+                E: "Problematic rush to termination without following proper procedures. This exposes the company to wrongful termination claims and may violate the employee's rights. Due process requires following established protocols."
+            },
+            3: {
+                A: "Excellent approach demonstrating the interactive accommodation process required by Title VII. Working collaboratively to find solutions that balance religious needs and business operations, while documenting the process, shows proper accommodation handling.",
+                B: "Good collaborative approach that seeks to understand needs before proposing solutions. Exploring creative alternatives demonstrates good faith in the accommodation process.",
+                C: "Acceptable partial accommodation but may not satisfy legal requirements. Dismissing the Friday request without exploring alternatives could be seen as failing to engage in the interactive process.",
+                D: "This prematurely claims undue hardship without fully exploring alternatives. Courts expect employers to demonstrate they considered all reasonable options before denying accommodation requests.",
+                E: "Problematic response that essentially tells the employee to choose between religion and employment. This fails the interactive process requirement and likely violates Title VII protections for religious accommodation."
+            },
+            4: {
+                A: "Excellent understanding of NLRA Section 7 protections. Employees discussing wages and working conditions, including unionization, is protected activity. Redirecting to address underlying concerns is the appropriate strategic response.",
+                B: "Good awareness of legal risks around wage discussions. Focusing on root causes rather than the speech itself demonstrates strategic HR thinking and reduces legal exposure.",
+                C: "Acceptable caution that appropriately involves legal review. However, this delays responding to legitimate employee concerns that may need immediate attention.",
+                D: "This approach risks violating NLRA protections. Even informal conversations about \"professional representation\" regarding protected activity can be seen as chilling employee rights.",
+                E: "Problematic response that would likely violate the NLRA. Disciplining employees for discussing wages or working conditions is a classic unfair labor practice, regardless of social media policy language."
+            },
+            5: {
+                A: "Excellent structured conflict resolution approach. Individual meetings allow each party to be heard, mediation creates shared understanding, and documented agreements with follow-up ensure accountability and lasting change.",
+                B: "Good systematic approach that begins with fact-finding and moves toward resolution. Clear expectations and consequences create structure, though facilitated dialogue between parties strengthens outcomes.",
+                C: "Acceptable but skips important steps. Written expectations without understanding root causes or facilitating dialogue may not resolve underlying issues and could escalate the conflict.",
+                D: "This avoids the problem rather than solving it. Separation doesn't build conflict resolution skills, may not always be possible, and signals that avoiding issues is acceptable organizational behavior.",
+                E: "Problematic avoidance that allows workplace toxicity to continue affecting the team. Unaddressed conflicts typically escalate. HR's role includes helping resolve situations that managers cannot handle alone."
+            },
+            6: {
+                A: "Excellent balanced response. Reviewing documentation for consistency demonstrates fairness, continuing appropriate performance management prevents the appearance of retaliation, and involving legal prepares for potential claims without overreacting.",
+                B: "Good comprehensive approach that ensures documentation is defensible while not abandoning legitimate performance management. Consistency analysis is key to defending discrimination claims.",
+                C: "Acceptable caution but may delay necessary performance management. Pausing all action can appear as though the threat worked, potentially encouraging similar behavior from other employees.",
+                D: "This approach would undermine legitimate documentation and set a precedent that threatening lawsuits changes outcomes. It also doesn't address the actual performance issues that need resolution.",
+                E: "Problematic overreaction that halts legitimate business operations. Employees cannot immunize themselves from accountability by threatening lawsuits. This approach also suggests the company lacks confidence in its documentation."
+            },
+            7: {
+                A: "Excellent response demonstrating understanding of FMLA rights and chronic condition management. Good days don't invalidate a medical condition. Recertification through proper channels is the appropriate response to legitimate concerns.",
+                B: "Good balanced response that validates concern while explaining proper procedures. Requesting updated certification is the legally appropriate way to verify ongoing medical need.",
+                C: "Acceptable documentation but monitoring based on social media creates legal risk. If pursuing concerns, use proper medical certification channels rather than surveillance-style approaches.",
+                D: "This approach confronts the employee based on social media, which could constitute FMLA interference or retaliation. Challenging employees about their medical conditions based on photos is inappropriate.",
+                E: "Problematic response that violates FMLA protections. A single photo is not evidence of fraud, and denying protected leave based on assumptions about chronic conditions exposes the company to significant liability."
+            },
+            8: {
+                A: "Excellent comprehensive response. Anonymous reports of potential fraud require serious investigation. Involving internal audit, ensuring investigator independence from the accused, and reviewing multiple areas demonstrates thorough and unbiased investigation.",
+                B: "Good approach that begins with preliminary fact-gathering before determining scope. Involving audit for expense review is appropriate given the financial allegations.",
+                C: "Acceptable initial response but may delay too long before taking action on potentially serious allegations involving a senior leader. Ethics hotline reports typically warrant prompt investigation.",
+                D: "This discourages anonymous reporting and may never yield the information needed. Whistleblower protections exist specifically because retaliation fears prevent people from coming forward openly.",
+                E: "Problematic response that would tip off the subject of the investigation, allow evidence destruction, and enable witness intimidation. The accused should never be informed before evidence is secured."
+            }
+        };
+
+        function startSimulation() {
+            document.getElementById('startScreen').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('questionsContainer').classList.remove('hidden');
+            document.getElementById('question1').classList.add('active');
+        }
+
+        function selectAnswer(questionNum, answer, score, rating) {
+            // Prevent changing answers
+            if (answers[questionNum]) return;
+
+            // Store answer
+            answers[questionNum] = {
+                answer: answer,
+                score: score,
+                rating: rating,
+                feedback: feedbackData[questionNum][answer]
+            };
+
+            // Update total score
+            totalScore += (score / 100) * 12.5;
+
+            // Disable all options for this question
+            const options = document.querySelectorAll(`#question${questionNum} .response-option`);
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                opt.style.opacity = '0.7';
+            });
+
+            // Highlight selected answer
+            const selectedBtn = event.target;
+            selectedBtn.classList.add(rating);
+            selectedBtn.style.opacity = '1';
+
+            // Show feedback
+            const feedbackPanel = document.getElementById(`feedback${questionNum}`);
+            feedbackPanel.className = `feedback-panel show ${rating}`;
+            feedbackPanel.querySelector('.feedback-score').textContent = `${score}% (${rating.charAt(0).toUpperCase() + rating.slice(1)})`;
+            feedbackPanel.querySelector('.feedback-text').textContent = feedbackData[questionNum][answer];
+
+            // Enable next button
+            document.getElementById(`nextBtn${questionNum}`).disabled = false;
+
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const completed = Object.keys(answers).length;
+            const percentage = (completed / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('progressText').textContent = `${completed} of ${totalQuestions} completed`;
+        }
+
+        function nextQuestion(nextNum) {
+            document.getElementById(`question${nextNum - 1}`).classList.remove('active');
+            document.getElementById(`question${nextNum}`).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showSummary() {
+            document.getElementById('questionsContainer').classList.add('hidden');
+            document.getElementById('progressContainer').classList.add('hidden');
+            document.getElementById('summaryContainer').classList.add('show');
+
+            // Calculate final score
+            const finalScore = Math.round(totalScore);
+            document.getElementById('finalScore').textContent = finalScore;
+
+            // Determine grade
+            let grade, gradeClass;
+            if (finalScore >= 90) { grade = 'A'; gradeClass = 'grade-a'; }
+            else if (finalScore >= 80) { grade = 'B'; gradeClass = 'grade-b'; }
+            else if (finalScore >= 70) { grade = 'C'; gradeClass = 'grade-c'; }
+            else if (finalScore >= 60) { grade = 'D'; gradeClass = 'grade-d'; }
+            else { grade = 'F'; gradeClass = 'grade-f'; }
+
+            const gradeBadge = document.getElementById('gradeBadge');
+            gradeBadge.textContent = `Grade: ${grade}`;
+            gradeBadge.className = `grade-badge ${gradeClass}`;
+
+            // Build summary items
+            const summaryItems = document.getElementById('summaryItems');
+            const itemTitles = [
+                "Harassment Complaint",
+                "Suspected Marijuana Use",
+                "Religious Accommodation",
+                "Social Media Protected Activity",
+                "Team Member Conflict",
+                "Legal Action Threat",
+                "FMLA Leave Suspicion",
+                "Anonymous Ethics Report"
+            ];
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const answer = answers[i];
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'summary-item';
+                itemDiv.innerHTML = `
+                    <div class="summary-item-header">
+                        <span class="summary-item-title">Item ${i}: ${itemTitles[i-1]}</span>
+                        <span class="summary-item-score ${answer.rating}">${answer.score}%</span>
+                    </div>
+                    <div class="summary-item-response">Your answer: Option ${answer.answer}</div>
+                    <div class="summary-item-feedback">${answer.feedback}</div>
+                `;
+                summaryItems.appendChild(itemDiv);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
