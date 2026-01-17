@@ -44,383 +44,7 @@
         </div>
 
         <!-- Questions Container -->
-        <div id="questionsContainer" class="hidden">
-            <!-- Item 1 -->
-            <div id="question1" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 1 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Sarah Mitchell, COO</div>
-                            <div class="email-subject">Major System Implementation Announcement</div>
-                            <div class="email-time">Today, 8:30 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi HR,<br><br>
-                        We're implementing a new ERP system that will change how every department works. The project is already underway with IT and consultants. Leadership wants to announce it company-wide next week. I'm worried about resistance - people hate when things get dropped on them. How should we approach the communication and rollout?<br><br>
-                        Sarah
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(1, 'A', 100, 'excellent')">
-                            A) Develop a comprehensive change management plan including stakeholder analysis, phased communication starting with managers, clear messaging about the "why," opportunities for input, training roadmap, and designated change champions in each department.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'B', 80, 'good')">
-                            B) Brief managers first so they can support their teams, craft messaging explaining business benefits, create FAQs for common concerns, and establish feedback channels for employees to voice concerns.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'C', 55, 'acceptable')">
-                            C) Create a clear communication plan with town halls to explain the change, training schedules, and a timeline so employees know what to expect and when.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'D', 30, 'poor')">
-                            D) Announce the change company-wide with emphasis on the competitive necessity and efficiency gains, trusting that employees will adapt once they understand the business case.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'E', 10, 'problematic')">
-                            E) Wait to announce until just before implementation so employees don't have time to organize resistance or spread negativity about the change.
-                        </button>
-                    </div>
-                    <div id="feedback1" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn1" class="btn btn-primary" onclick="nextQuestion(2)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div id="question2" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 2 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Michael Brooks, VP of Engineering</div>
-                            <div class="email-subject">Team Resisting Agile Transformation</div>
-                            <div class="email-time">Today, 9:15 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        HR,<br><br>
-                        We're implementing Agile methodology, but my senior engineers are pushing back hard. They say it's "management fad" and "adds overhead without value." These are experienced, high-performing people whose opinions carry weight with junior staff. I need their buy-in or this will fail. How do I bring them along?<br><br>
-                        Michael
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(2, 'A', 100, 'excellent')">
-                            A) Engage the resisters directly to understand their specific concerns, involve them in customizing Agile practices to address those concerns, give them leadership roles in pilot teams, and use their influence positively by addressing their objections transparently.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'B', 80, 'good')">
-                            B) Have honest conversations about their concerns, show them how Agile principles align with engineering best practices they already value, and let them help shape implementation to fit team needs.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'C', 55, 'acceptable')">
-                            C) Share case studies and data from similar engineering organizations that successfully adopted Agile, and offer to pilot the approach with a small team to demonstrate value before broader rollout.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'D', 30, 'poor')">
-                            D) Make clear that Agile is a leadership decision and expectation, and while input is welcome, the transformation will proceed regardless of individual preferences.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'E', 10, 'problematic')">
-                            E) Work around the senior engineers by focusing on the junior staff who are more adaptable, and let the seniors opt out of Agile practices until they see others succeeding.
-                        </button>
-                    </div>
-                    <div id="feedback2" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn2" class="btn btn-primary" onclick="nextQuestion(3)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div id="question3" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 3 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Jennifer Adams, CEO</div>
-                            <div class="email-subject">Merger Communication Strategy</div>
-                            <div class="email-time">Today, 10:30 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Confidential,<br><br>
-                        We're acquiring a competitor. There will be role redundancies in finance, HR, and IT. Employees are already anxious from rumors. We can't disclose details until the deal closes in 60 days, but morale is suffering from uncertainty. How do we manage employee anxiety without revealing information we can't share yet?<br><br>
-                        Jennifer
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(3, 'A', 100, 'excellent')">
-                            A) Acknowledge the uncertainty honestly, commit to transparent communication as soon as possible, outline the timeline and decision process, provide support resources, and focus on what you can share rather than dismissing concerns.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'B', 80, 'good')">
-                            B) Communicate that changes are being evaluated, share the criteria that will guide decisions, provide a timeline for when employees will learn about their status, and remind them of severance and support programs.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'C', 55, 'acceptable')">
-                            C) Hold a town hall acknowledging the rumors and uncertainty, explain legal constraints on what can be shared, and commit to communicating quickly once decisions are made.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'D', 30, 'poor')">
-                            D) Discourage speculation by reminding employees that rumors are often wrong, encourage focus on current work, and promise updates when there's something concrete to share.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'E', 10, 'problematic')">
-                            E) Maintain confidentiality by neither confirming nor denying the rumors, since premature disclosure could jeopardize the deal and cause even more disruption.
-                        </button>
-                    </div>
-                    <div id="feedback3" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn3" class="btn btn-primary" onclick="nextQuestion(4)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div id="question4" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 4 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">David Lee, Regional Manager</div>
-                            <div class="email-subject">Office Consolidation Resistance</div>
-                            <div class="email-time">Today, 11:45 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi,<br><br>
-                        Corporate is closing our satellite office and moving everyone to headquarters - a 45-minute longer commute for most employees. People are furious and talking about quitting. I understand the cost savings, but I'm going to lose good people. How can we make this transition less painful?<br><br>
-                        David
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(4, 'A', 100, 'excellent')">
-                            A) Propose mitigation measures including expanded remote work options, flexible schedules, commuter benefits, phased transition timeline, and individual conversations with at-risk employees about their concerns and needs.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'B', 80, 'good')">
-                            B) Recommend offering hybrid work arrangements, commuter subsidies, and adjusted start/end times to reduce commute impact, while being transparent about the business necessity.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'C', 55, 'acceptable')">
-                            C) Provide a reasonable transition timeline, offer remote work days where possible, and help employees assess whether the change works for them personally.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'D', 30, 'poor')">
-                            D) Explain the business case clearly and acknowledge the inconvenience, but be clear that the decision is final and help employees adjust expectations.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'E', 10, 'problematic')">
-                            E) Accept that some turnover is inevitable with this change and focus on retention planning for the most critical employees only.
-                        </button>
-                    </div>
-                    <div id="feedback4" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn4" class="btn btn-primary" onclick="nextQuestion(5)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div id="question5" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 5 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Patricia Wong, Training Director</div>
-                            <div class="email-subject">Change Fatigue After Multiple Initiatives</div>
-                            <div class="email-time">Today, 1:00 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hello,<br><br>
-                        We've rolled out three major initiatives in 18 months - new performance system, organizational restructure, and a software migration. Another change is coming (wellness program overhaul). Employees are exhausted and cynical. They roll their eyes at new initiatives. How do we combat change fatigue and restore engagement?<br><br>
-                        Patricia
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(5, 'A', 100, 'excellent')">
-                            A) Recommend pausing or slowing the wellness rollout, acknowledge change fatigue openly, celebrate wins from completed initiatives, stabilize before introducing more change, and create a change portfolio view to prevent future overload.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'B', 80, 'good')">
-                            B) Sequence the wellness program later, acknowledge employees' feelings about change volume, ensure previous changes are embedded before adding more, and involve employees in shaping the wellness program.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'C', 55, 'acceptable')">
-                            C) Keep the wellness program but reduce its scope, simplify the implementation, and frame it as supportive rather than another thing employees must do.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'D', 30, 'poor')">
-                            D) Proceed with the wellness program as planned since employee health is important, but improve communication to explain why this particular change benefits employees.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'E', 10, 'problematic')">
-                            E) Push through the change since cynicism is normal and employees will adjust eventually. Delaying changes because employees are tired sets a bad precedent.
-                        </button>
-                    </div>
-                    <div id="feedback5" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn5" class="btn btn-primary" onclick="nextQuestion(6)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 6 -->
-            <div id="question6" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 6 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Andrew Thomas, Division President</div>
-                            <div class="email-subject">Culture Integration After Acquisition</div>
-                            <div class="email-time">Today, 2:15 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        HR,<br><br>
-                        We acquired a smaller company 6 months ago. Their culture was startup-like: casual, flat structure, rapid decisions. We're more formal and process-driven. Their employees feel stifled, ours feel they're getting special treatment. Neither side is integrating well. How do we merge these cultures?<br><br>
-                        Andrew
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(6, 'A', 100, 'excellent')">
-                            A) Facilitate joint sessions to identify values to preserve from both cultures, create cross-functional teams to build relationships, establish clear norms that incorporate strengths from each, and address integration issues through visible leadership commitment.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'B', 80, 'good')">
-                            B) Conduct listening sessions with both groups, identify specific friction points, find compromises on processes and practices, and pair people from both organizations in mentoring relationships.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'C', 55, 'acceptable')">
-                            C) Allow the acquired team some autonomy to maintain their culture where it doesn't conflict with essential corporate policies, while gradually introducing integration points.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'D', 30, 'poor')">
-                            D) Communicate that the acquired company is now part of a larger organization and needs to adapt to established processes while remaining open to good ideas.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'E', 10, 'problematic')">
-                            E) Let integration happen naturally over time rather than forcing cultural alignment, as people will eventually adapt to working together.
-                        </button>
-                    </div>
-                    <div id="feedback6" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn6" class="btn btn-primary" onclick="nextQuestion(7)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 7 -->
-            <div id="question7" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 7 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Nicole Harper, Change Management Lead</div>
-                            <div class="email-subject">Middle Management Bottleneck</div>
-                            <div class="email-time">Today, 3:30 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi,<br><br>
-                        Our transformation initiatives keep stalling at the middle management level. Senior leadership is committed, frontline employees seem ready, but managers in between aren't championing changes. They're overwhelmed, skeptical, or worried about losing power. They do the minimum required. How do we activate this critical layer?<br><br>
-                        Nicole
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(7, 'A', 100, 'excellent')">
-                            A) Involve middle managers earlier in change planning, address their specific concerns about their roles and workload, provide change leadership training, give them ownership of implementation decisions, and recognize those who champion change.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'B', 80, 'good')">
-                            B) Create forums for managers to voice concerns and shape implementation, reduce their other responsibilities during transitions, and make change leadership part of their performance expectations with appropriate support.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'C', 55, 'acceptable')">
-                            C) Provide managers with talking points and tools to communicate changes, offer coaching on change leadership skills, and set clear expectations about their role in driving adoption.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'D', 30, 'poor')">
-                            D) Hold managers accountable for change adoption in their teams through performance metrics and consequences for not meeting transformation goals.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'E', 10, 'problematic')">
-                            E) Work around reluctant middle managers by communicating directly with frontline employees and providing them resources to adopt changes independently.
-                        </button>
-                    </div>
-                    <div id="feedback7" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn7" class="btn btn-primary" onclick="nextQuestion(8)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 8 -->
-            <div id="question8" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 8 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Brian Foster, Chief Transformation Officer</div>
-                            <div class="email-subject">Measuring Change Success</div>
-                            <div class="email-time">Today, 4:30 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hello,<br><br>
-                        Leadership wants proof that our change management investments are paying off. They want to see ROI. But how do you measure cultural change or employee adoption? What metrics should we track to demonstrate value and identify what's working versus what needs adjustment?<br><br>
-                        Brian
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(8, 'A', 100, 'excellent')">
-                            A) Develop a balanced scorecard with leading indicators (training completion, awareness, engagement) and lagging indicators (adoption rates, productivity, business outcomes), track sentiment through pulse surveys, and connect behavioral change to business metrics.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'B', 80, 'good')">
-                            B) Track adoption metrics (system usage, process compliance), measure employee sentiment over time, calculate time-to-proficiency for new processes, and tie changes to operational KPIs where possible.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'C', 55, 'acceptable')">
-                            C) Survey employees on awareness, understanding, and commitment to changes, and track training completion rates alongside operational metrics that should improve with successful adoption.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'D', 30, 'poor')">
-                            D) Focus on business outcome metrics that the changes were meant to achieve, since cultural measures are soft and leadership cares about hard results.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'E', 10, 'problematic')">
-                            E) Explain that change management value is difficult to quantify and leadership should trust that professional change management improves outcomes even without direct measurement.
-                        </button>
-                    </div>
-                    <div id="feedback8" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn8" class="btn btn-primary" onclick="showSummary()" disabled>View Results</button>
-                </div>
-            </div>
-        </div>
+        <div id="questionsContainer" class="hidden"></div>
 
         <!-- Summary Screen -->
         <div id="summaryContainer" class="summary-container">
@@ -447,111 +71,307 @@
         let totalQuestions = 8;
         let answers = {};
         let totalScore = 0;
+        let shuffledOptions = {};
 
-        // Feedback data for each question
-        const feedbackData = {
-            1: {
-                A: "Excellent comprehensive change management approach. Stakeholder analysis enables targeted communication, manager briefings cascade information properly, champions create peer influence, and training prepares for success. This follows proven change management methodology.",
-                B: "Good structured approach that addresses key change management elements. Manager preparation is crucial for successful cascading, and feedback channels demonstrate openness to employee input.",
-                C: "Acceptable communication-focused approach but misses stakeholder engagement and influence strategies. Communication alone doesn't drive adoption - people need to be involved, not just informed.",
-                D: "This assumes rational explanation creates buy-in. Research shows people resist change for emotional and practical reasons beyond understanding the business case. This approach lacks engagement.",
-                E: "Problematic approach that treats employees as adversaries. Surprise announcements generate maximum resistance. Employees who feel blindsided become active resisters rather than potential supporters."
+        // Question data
+        const questions = [
+            {
+                id: 1,
+                from: "Sarah Mitchell, COO",
+                subject: "Major System Implementation Announcement",
+                time: "Today, 8:30 AM",
+                body: `Hi HR,<br><br>
+                    We're implementing a new ERP system that will change how every department works. The project is already underway with IT and consultants. Leadership wants to announce it company-wide next week. I'm worried about resistance - people hate when things get dropped on them. How should we approach the communication and rollout?<br><br>
+                    Sarah`,
+                options: [
+                    { id: 'A', text: "Develop a comprehensive change management plan including stakeholder analysis, phased communication starting with managers, clear messaging about the \"why,\" opportunities for input, training roadmap, and designated change champions in each department.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Brief managers first so they can support their teams, craft messaging explaining business benefits, create FAQs for common concerns, and establish feedback channels for employees to voice concerns.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Create a clear communication plan with town halls to explain the change, training schedules, and a timeline so employees know what to expect and when.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Announce the change company-wide with emphasis on the competitive necessity and efficiency gains, trusting that employees will adapt once they understand the business case.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Wait to announce until just before implementation so employees don't have time to organize resistance or spread negativity about the change.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent comprehensive change management approach. Stakeholder analysis enables targeted communication, manager briefings cascade information properly, champions create peer influence, and training prepares for success. This follows proven change management methodology.",
+                    B: "Good structured approach that addresses key change management elements. Manager preparation is crucial for successful cascading, and feedback channels demonstrate openness to employee input.",
+                    C: "Acceptable communication-focused approach but misses stakeholder engagement and influence strategies. Communication alone doesn't drive adoption - people need to be involved, not just informed.",
+                    D: "This assumes rational explanation creates buy-in. Research shows people resist change for emotional and practical reasons beyond understanding the business case. This approach lacks engagement.",
+                    E: "Problematic approach that treats employees as adversaries. Surprise announcements generate maximum resistance. Employees who feel blindsided become active resisters rather than potential supporters."
+                }
             },
-            2: {
-                A: "Excellent approach converting potential opponents into allies. Understanding concerns enables addressing them, involvement creates ownership, leadership roles leverage their influence positively, and transparency builds trust.",
-                B: "Good participatory approach that respects senior engineers' expertise while guiding toward organizational goals. Connecting Agile to their existing values creates cognitive bridge.",
-                C: "Acceptable evidence-based approach, but external case studies may be dismissed as 'different situations.' Piloting is useful but doesn't address the attitude of influential seniors.",
-                D: "This may achieve compliance but not commitment. Senior engineers who comply minimally will undermine the transformation through passive resistance and influence on others.",
-                E: "Problematic strategy that creates factions and guarantees ongoing conflict. Senior engineers who feel bypassed may actively sabotage the effort or leave, taking valuable knowledge."
+            {
+                id: 2,
+                from: "Michael Brooks, VP of Engineering",
+                subject: "Team Resisting Agile Transformation",
+                time: "Today, 9:15 AM",
+                body: `HR,<br><br>
+                    We're implementing Agile methodology, but my senior engineers are pushing back hard. They say it's "management fad" and "adds overhead without value." These are experienced, high-performing people whose opinions carry weight with junior staff. I need their buy-in or this will fail. How do I bring them along?<br><br>
+                    Michael`,
+                options: [
+                    { id: 'A', text: "Engage the resisters directly to understand their specific concerns, involve them in customizing Agile practices to address those concerns, give them leadership roles in pilot teams, and use their influence positively by addressing their objections transparently.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Have honest conversations about their concerns, show them how Agile principles align with engineering best practices they already value, and let them help shape implementation to fit team needs.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Share case studies and data from similar engineering organizations that successfully adopted Agile, and offer to pilot the approach with a small team to demonstrate value before broader rollout.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Make clear that Agile is a leadership decision and expectation, and while input is welcome, the transformation will proceed regardless of individual preferences.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Work around the senior engineers by focusing on the junior staff who are more adaptable, and let the seniors opt out of Agile practices until they see others succeeding.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent approach converting potential opponents into allies. Understanding concerns enables addressing them, involvement creates ownership, leadership roles leverage their influence positively, and transparency builds trust.",
+                    B: "Good participatory approach that respects senior engineers' expertise while guiding toward organizational goals. Connecting Agile to their existing values creates cognitive bridge.",
+                    C: "Acceptable evidence-based approach, but external case studies may be dismissed as 'different situations.' Piloting is useful but doesn't address the attitude of influential seniors.",
+                    D: "This may achieve compliance but not commitment. Senior engineers who comply minimally will undermine the transformation through passive resistance and influence on others.",
+                    E: "Problematic strategy that creates factions and guarantees ongoing conflict. Senior engineers who feel bypassed may actively sabotage the effort or leave, taking valuable knowledge."
+                }
             },
-            3: {
-                A: "Excellent approach balancing transparency with confidentiality constraints. Acknowledging uncertainty is honest, outlining process gives some predictability, and support resources show care. This maintains trust during difficult ambiguity.",
-                B: "Good communication of what can be shared - criteria, timeline, and support. Employees appreciate knowing how decisions will be made even when outcomes are unknown.",
-                C: "Acceptable acknowledgment of the situation but may not provide enough concrete information. Employees need some certainty, even if it's just about the decision-making process.",
-                D: "This dismisses legitimate concerns and provides no useful information. Telling people not to speculate while giving them nothing doesn't work - it just moves speculation underground.",
-                E: "Problematic denial that damages trust. When rumors are circulating and leadership says nothing, employees assume the worst and start looking for other jobs preemptively."
+            {
+                id: 3,
+                from: "Jennifer Adams, CEO",
+                subject: "Merger Communication Strategy",
+                time: "Today, 10:30 AM",
+                body: `Confidential,<br><br>
+                    We're acquiring a competitor. There will be role redundancies in finance, HR, and IT. Employees are already anxious from rumors. We can't disclose details until the deal closes in 60 days, but morale is suffering from uncertainty. How do we manage employee anxiety without revealing information we can't share yet?<br><br>
+                    Jennifer`,
+                options: [
+                    { id: 'A', text: "Acknowledge the uncertainty honestly, commit to transparent communication as soon as possible, outline the timeline and decision process, provide support resources, and focus on what you can share rather than dismissing concerns.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Communicate that changes are being evaluated, share the criteria that will guide decisions, provide a timeline for when employees will learn about their status, and remind them of severance and support programs.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Hold a town hall acknowledging the rumors and uncertainty, explain legal constraints on what can be shared, and commit to communicating quickly once decisions are made.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Discourage speculation by reminding employees that rumors are often wrong, encourage focus on current work, and promise updates when there's something concrete to share.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Maintain confidentiality by neither confirming nor denying the rumors, since premature disclosure could jeopardize the deal and cause even more disruption.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent approach balancing transparency with confidentiality constraints. Acknowledging uncertainty is honest, outlining process gives some predictability, and support resources show care. This maintains trust during difficult ambiguity.",
+                    B: "Good communication of what can be shared - criteria, timeline, and support. Employees appreciate knowing how decisions will be made even when outcomes are unknown.",
+                    C: "Acceptable acknowledgment of the situation but may not provide enough concrete information. Employees need some certainty, even if it's just about the decision-making process.",
+                    D: "This dismisses legitimate concerns and provides no useful information. Telling people not to speculate while giving them nothing doesn't work - it just moves speculation underground.",
+                    E: "Problematic denial that damages trust. When rumors are circulating and leadership says nothing, employees assume the worst and start looking for other jobs preemptively."
+                }
             },
-            4: {
-                A: "Excellent comprehensive mitigation strategy addressing practical impacts. Multiple flexibility options accommodate different situations, individual conversations show care, and phased transition eases adjustment.",
-                B: "Good practical accommodations addressing commute burden. Transparency about necessity paired with flexibility options shows balance of business and employee needs.",
-                C: "Acceptable basic support but may not be enough to retain employees with significant commute impact. Self-selection approach may result in losing valuable people.",
-                D: "This communicates without mitigating. Understanding the business case doesn't reduce commute time. Employees need tangible accommodations, not just explanations.",
-                E: "Problematic triage approach that signals to most employees that the company doesn't care about their situation. This creates exodus and damages employer brand."
+            {
+                id: 4,
+                from: "David Lee, Regional Manager",
+                subject: "Office Consolidation Resistance",
+                time: "Today, 11:45 AM",
+                body: `Hi,<br><br>
+                    Corporate is closing our satellite office and moving everyone to headquarters - a 45-minute longer commute for most employees. People are furious and talking about quitting. I understand the cost savings, but I'm going to lose good people. How can we make this transition less painful?<br><br>
+                    David`,
+                options: [
+                    { id: 'A', text: "Propose mitigation measures including expanded remote work options, flexible schedules, commuter benefits, phased transition timeline, and individual conversations with at-risk employees about their concerns and needs.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Recommend offering hybrid work arrangements, commuter subsidies, and adjusted start/end times to reduce commute impact, while being transparent about the business necessity.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Provide a reasonable transition timeline, offer remote work days where possible, and help employees assess whether the change works for them personally.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Explain the business case clearly and acknowledge the inconvenience, but be clear that the decision is final and help employees adjust expectations.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Accept that some turnover is inevitable with this change and focus on retention planning for the most critical employees only.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent comprehensive mitigation strategy addressing practical impacts. Multiple flexibility options accommodate different situations, individual conversations show care, and phased transition eases adjustment.",
+                    B: "Good practical accommodations addressing commute burden. Transparency about necessity paired with flexibility options shows balance of business and employee needs.",
+                    C: "Acceptable basic support but may not be enough to retain employees with significant commute impact. Self-selection approach may result in losing valuable people.",
+                    D: "This communicates without mitigating. Understanding the business case doesn't reduce commute time. Employees need tangible accommodations, not just explanations.",
+                    E: "Problematic triage approach that signals to most employees that the company doesn't care about their situation. This creates exodus and damages employer brand."
+                }
             },
-            5: {
-                A: "Excellent recognition that change capacity is finite. Pausing to stabilize, celebrating wins, and implementing portfolio management shows sophisticated understanding of organizational change limits.",
-                B: "Good sequencing approach that respects employee bandwidth. Involvement in shaping the wellness program can rebuild engagement that previous changes depleted.",
-                C: "Acceptable scope reduction but still adds another change. The framing as supportive may not overcome the cynicism from change fatigue.",
-                D: "This ignores the change fatigue context. Even beneficial changes require adoption energy. Proceeding without addressing fatigue will likely result in poor adoption and increased cynicism.",
-                E: "Problematic dismissal of employee experience that will accelerate disengagement and turnover. Change fatigue is a real phenomenon that increases with each ignored signal."
+            {
+                id: 5,
+                from: "Patricia Wong, Training Director",
+                subject: "Change Fatigue After Multiple Initiatives",
+                time: "Today, 1:00 PM",
+                body: `Hello,<br><br>
+                    We've rolled out three major initiatives in 18 months - new performance system, organizational restructure, and a software migration. Another change is coming (wellness program overhaul). Employees are exhausted and cynical. They roll their eyes at new initiatives. How do we combat change fatigue and restore engagement?<br><br>
+                    Patricia`,
+                options: [
+                    { id: 'A', text: "Recommend pausing or slowing the wellness rollout, acknowledge change fatigue openly, celebrate wins from completed initiatives, stabilize before introducing more change, and create a change portfolio view to prevent future overload.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Sequence the wellness program later, acknowledge employees' feelings about change volume, ensure previous changes are embedded before adding more, and involve employees in shaping the wellness program.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Keep the wellness program but reduce its scope, simplify the implementation, and frame it as supportive rather than another thing employees must do.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Proceed with the wellness program as planned since employee health is important, but improve communication to explain why this particular change benefits employees.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Push through the change since cynicism is normal and employees will adjust eventually. Delaying changes because employees are tired sets a bad precedent.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent recognition that change capacity is finite. Pausing to stabilize, celebrating wins, and implementing portfolio management shows sophisticated understanding of organizational change limits.",
+                    B: "Good sequencing approach that respects employee bandwidth. Involvement in shaping the wellness program can rebuild engagement that previous changes depleted.",
+                    C: "Acceptable scope reduction but still adds another change. The framing as supportive may not overcome the cynicism from change fatigue.",
+                    D: "This ignores the change fatigue context. Even beneficial changes require adoption energy. Proceeding without addressing fatigue will likely result in poor adoption and increased cynicism.",
+                    E: "Problematic dismissal of employee experience that will accelerate disengagement and turnover. Change fatigue is a real phenomenon that increases with each ignored signal."
+                }
             },
-            6: {
-                A: "Excellent integration approach that creates new shared culture rather than forcing one onto the other. Joint sessions build relationships, cross-functional teams create understanding, and visible leadership signals importance.",
-                B: "Good listening-first approach addressing specific friction points. Mentoring relationships build understanding and relationships across the cultural divide.",
-                C: "Acceptable gradual approach but may perpetuate two-culture dynamics. Some differentiation may be appropriate, but true integration requires intentional effort.",
-                D: "This frames integration as one-way adaptation, signaling that acquired employees' culture has no value. This approach accelerates departure of acquired talent.",
-                E: "Problematic passive approach. Culture conflicts don't resolve naturally - they fester into factions, reduced collaboration, and regretted attrition of valuable talent from both sides."
+            {
+                id: 6,
+                from: "Andrew Thomas, Division President",
+                subject: "Culture Integration After Acquisition",
+                time: "Today, 2:15 PM",
+                body: `HR,<br><br>
+                    We acquired a smaller company 6 months ago. Their culture was startup-like: casual, flat structure, rapid decisions. We're more formal and process-driven. Their employees feel stifled, ours feel they're getting special treatment. Neither side is integrating well. How do we merge these cultures?<br><br>
+                    Andrew`,
+                options: [
+                    { id: 'A', text: "Facilitate joint sessions to identify values to preserve from both cultures, create cross-functional teams to build relationships, establish clear norms that incorporate strengths from each, and address integration issues through visible leadership commitment.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Conduct listening sessions with both groups, identify specific friction points, find compromises on processes and practices, and pair people from both organizations in mentoring relationships.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Allow the acquired team some autonomy to maintain their culture where it doesn't conflict with essential corporate policies, while gradually introducing integration points.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Communicate that the acquired company is now part of a larger organization and needs to adapt to established processes while remaining open to good ideas.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Let integration happen naturally over time rather than forcing cultural alignment, as people will eventually adapt to working together.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent integration approach that creates new shared culture rather than forcing one onto the other. Joint sessions build relationships, cross-functional teams create understanding, and visible leadership signals importance.",
+                    B: "Good listening-first approach addressing specific friction points. Mentoring relationships build understanding and relationships across the cultural divide.",
+                    C: "Acceptable gradual approach but may perpetuate two-culture dynamics. Some differentiation may be appropriate, but true integration requires intentional effort.",
+                    D: "This frames integration as one-way adaptation, signaling that acquired employees' culture has no value. This approach accelerates departure of acquired talent.",
+                    E: "Problematic passive approach. Culture conflicts don't resolve naturally - they fester into factions, reduced collaboration, and regretted attrition of valuable talent from both sides."
+                }
             },
-            7: {
-                A: "Excellent approach addressing root causes of middle manager resistance. Early involvement creates ownership, addressing concerns removes barriers, training builds capability, and recognition incentivizes championship.",
-                B: "Good structural approach reducing barriers while setting expectations. Workload reduction during transitions acknowledges the additional effort change leadership requires.",
-                C: "Acceptable enablement approach but doesn't address root causes of resistance. Tools and expectations without addressing concerns about roles and workload won't overcome skepticism.",
-                D: "This applies pressure without addressing underlying issues. Accountability for outcomes without addressing capability and concerns often results in gaming metrics rather than real adoption.",
-                E: "Problematic approach that undermines the management structure. Middle managers who feel bypassed become actively hostile to changes and may leave, taking organizational knowledge with them."
+            {
+                id: 7,
+                from: "Nicole Harper, Change Management Lead",
+                subject: "Middle Management Bottleneck",
+                time: "Today, 3:30 PM",
+                body: `Hi,<br><br>
+                    Our transformation initiatives keep stalling at the middle management level. Senior leadership is committed, frontline employees seem ready, but managers in between aren't championing changes. They're overwhelmed, skeptical, or worried about losing power. They do the minimum required. How do we activate this critical layer?<br><br>
+                    Nicole`,
+                options: [
+                    { id: 'A', text: "Involve middle managers earlier in change planning, address their specific concerns about their roles and workload, provide change leadership training, give them ownership of implementation decisions, and recognize those who champion change.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Create forums for managers to voice concerns and shape implementation, reduce their other responsibilities during transitions, and make change leadership part of their performance expectations with appropriate support.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Provide managers with talking points and tools to communicate changes, offer coaching on change leadership skills, and set clear expectations about their role in driving adoption.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Hold managers accountable for change adoption in their teams through performance metrics and consequences for not meeting transformation goals.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Work around reluctant middle managers by communicating directly with frontline employees and providing them resources to adopt changes independently.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent approach addressing root causes of middle manager resistance. Early involvement creates ownership, addressing concerns removes barriers, training builds capability, and recognition incentivizes championship.",
+                    B: "Good structural approach reducing barriers while setting expectations. Workload reduction during transitions acknowledges the additional effort change leadership requires.",
+                    C: "Acceptable enablement approach but doesn't address root causes of resistance. Tools and expectations without addressing concerns about roles and workload won't overcome skepticism.",
+                    D: "This applies pressure without addressing underlying issues. Accountability for outcomes without addressing capability and concerns often results in gaming metrics rather than real adoption.",
+                    E: "Problematic approach that undermines the management structure. Middle managers who feel bypassed become actively hostile to changes and may leave, taking organizational knowledge with them."
+                }
             },
-            8: {
-                A: "Excellent comprehensive measurement framework. Leading indicators enable course correction, lagging indicators show business impact, sentiment tracking reveals employee experience, and connecting to business metrics demonstrates ROI.",
-                B: "Good multi-dimensional measurement covering adoption, sentiment, and operational impact. Time-to-proficiency is a valuable metric that connects change management to productivity.",
-                C: "Acceptable awareness and training metrics paired with outcomes, but lacks leading indicators for adoption and may not enable proactive intervention when changes are struggling.",
-                D: "This misses the point of change management measurement. Business outcomes often lag and are influenced by many factors. Behavioral metrics show whether changes are being adopted.",
-                E: "Problematic avoidance of accountability. Change management must demonstrate value to maintain organizational investment. Measurement enables improvement and builds credibility for the function."
+            {
+                id: 8,
+                from: "Brian Foster, Chief Transformation Officer",
+                subject: "Measuring Change Success",
+                time: "Today, 4:30 PM",
+                body: `Hello,<br><br>
+                    Leadership wants proof that our change management investments are paying off. They want to see ROI. But how do you measure cultural change or employee adoption? What metrics should we track to demonstrate value and identify what's working versus what needs adjustment?<br><br>
+                    Brian`,
+                options: [
+                    { id: 'A', text: "Develop a balanced scorecard with leading indicators (training completion, awareness, engagement) and lagging indicators (adoption rates, productivity, business outcomes), track sentiment through pulse surveys, and connect behavioral change to business metrics.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Track adoption metrics (system usage, process compliance), measure employee sentiment over time, calculate time-to-proficiency for new processes, and tie changes to operational KPIs where possible.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Survey employees on awareness, understanding, and commitment to changes, and track training completion rates alongside operational metrics that should improve with successful adoption.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Focus on business outcome metrics that the changes were meant to achieve, since cultural measures are soft and leadership cares about hard results.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Explain that change management value is difficult to quantify and leadership should trust that professional change management improves outcomes even without direct measurement.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent comprehensive measurement framework. Leading indicators enable course correction, lagging indicators show business impact, sentiment tracking reveals employee experience, and connecting to business metrics demonstrates ROI.",
+                    B: "Good multi-dimensional measurement covering adoption, sentiment, and operational impact. Time-to-proficiency is a valuable metric that connects change management to productivity.",
+                    C: "Acceptable awareness and training metrics paired with outcomes, but lacks leading indicators for adoption and may not enable proactive intervention when changes are struggling.",
+                    D: "This misses the point of change management measurement. Business outcomes often lag and are influenced by many factors. Behavioral metrics show whether changes are being adopted.",
+                    E: "Problematic avoidance of accountability. Change management must demonstrate value to maintain organizational investment. Measurement enables improvement and builds credibility for the function."
+                }
             }
-        };
+        ];
+
+        const itemTitles = [
+            "Major System Implementation",
+            "Agile Transformation Resistance",
+            "Merger Communication Strategy",
+            "Office Consolidation",
+            "Change Fatigue",
+            "Culture Integration",
+            "Middle Management Bottleneck",
+            "Measuring Change Success"
+        ];
+
+        // Shuffle array using Fisher-Yates algorithm
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Render a single question
+        function renderQuestion(question, index) {
+            const shuffledOpts = shuffleArray(question.options);
+            shuffledOptions[question.id] = shuffledOpts;
+
+            const isLast = index === questions.length - 1;
+            const nextAction = isLast ? 'showSummary()' : `nextQuestion(${question.id + 1})`;
+            const nextBtnText = isLast ? 'View Results' : 'Next Item';
+
+            let optionsHtml = '';
+            shuffledOpts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                optionsHtml += `
+                    <button class="response-option" onclick="selectAnswer(${question.id}, '${opt.id}', ${opt.score}, '${opt.rating}')">
+                        ${letter}) ${opt.text}
+                    </button>
+                `;
+            });
+
+            return `
+                <div id="question${question.id}" class="question-container${index === 0 ? ' active' : ''}">
+                    <div class="inbox-item">
+                        <span class="item-number">Item ${question.id} of 8</span>
+                        <div class="email-header">
+                            <div class="email-icon">📧</div>
+                            <div class="email-meta">
+                                <div class="email-from">${question.from}</div>
+                                <div class="email-subject">${question.subject}</div>
+                                <div class="email-time">${question.time}</div>
+                            </div>
+                        </div>
+                        <div class="email-body">${question.body}</div>
+                        <div class="response-options">${optionsHtml}</div>
+                        <div id="feedback${question.id}" class="feedback-panel">
+                            <div class="feedback-header">
+                                <span class="feedback-label">Feedback</span>
+                                <span class="feedback-score"></span>
+                            </div>
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+                    <div class="nav-buttons">
+                        <button id="nextBtn${question.id}" class="btn btn-primary" onclick="${nextAction}" disabled>${nextBtnText}</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render all questions
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = questions.map((q, i) => renderQuestion(q, i)).join('');
+        }
 
         function startSimulation() {
+            renderQuestions();
             document.getElementById('startScreen').classList.add('hidden');
             document.getElementById('progressContainer').classList.remove('hidden');
             document.getElementById('questionsContainer').classList.remove('hidden');
-            document.getElementById('question1').classList.add('active');
         }
 
-        function selectAnswer(questionNum, answer, score, rating) {
-            // Prevent changing answers
+        function selectAnswer(questionNum, answerId, score, rating) {
             if (answers[questionNum]) return;
 
-            // Store answer
+            const question = questions.find(q => q.id === questionNum);
+
             answers[questionNum] = {
-                answer: answer,
+                answer: answerId,
                 score: score,
                 rating: rating,
-                feedback: feedbackData[questionNum][answer]
+                feedback: question.feedback[answerId]
             };
 
-            // Update total score
             totalScore += (score / 100) * 12.5;
 
-            // Disable all options for this question
             const options = document.querySelectorAll(`#question${questionNum} .response-option`);
             options.forEach(opt => {
                 opt.style.pointerEvents = 'none';
                 opt.style.opacity = '0.7';
             });
 
-            // Highlight selected answer
-            const selectedBtn = event.target;
-            selectedBtn.classList.add(rating);
-            selectedBtn.style.opacity = '1';
+            event.target.classList.add(rating);
+            event.target.style.opacity = '1';
 
-            // Show feedback
             const feedbackPanel = document.getElementById(`feedback${questionNum}`);
             feedbackPanel.className = `feedback-panel show ${rating}`;
             feedbackPanel.querySelector('.feedback-score').textContent = `${score}% (${rating.charAt(0).toUpperCase() + rating.slice(1)})`;
-            feedbackPanel.querySelector('.feedback-text').textContent = feedbackData[questionNum][answer];
+            feedbackPanel.querySelector('.feedback-text').textContent = question.feedback[answerId];
 
-            // Enable next button
             document.getElementById(`nextBtn${questionNum}`).disabled = false;
-
-            // Update progress
             updateProgress();
         }
 
@@ -573,11 +393,9 @@
             document.getElementById('progressContainer').classList.add('hidden');
             document.getElementById('summaryContainer').classList.add('show');
 
-            // Calculate final score
             const finalScore = Math.round(totalScore);
             document.getElementById('finalScore').textContent = finalScore;
 
-            // Determine grade
             let grade, gradeClass;
             if (finalScore >= 90) { grade = 'A'; gradeClass = 'grade-a'; }
             else if (finalScore >= 80) { grade = 'B'; gradeClass = 'grade-b'; }
@@ -589,19 +407,7 @@
             gradeBadge.textContent = `Grade: ${grade}`;
             gradeBadge.className = `grade-badge ${gradeClass}`;
 
-            // Build summary items
             const summaryItems = document.getElementById('summaryItems');
-            const itemTitles = [
-                "Major System Implementation",
-                "Agile Transformation Resistance",
-                "Merger Communication Strategy",
-                "Office Consolidation",
-                "Change Fatigue",
-                "Culture Integration",
-                "Middle Management Bottleneck",
-                "Measuring Change Success"
-            ];
-
             for (let i = 1; i <= totalQuestions; i++) {
                 const answer = answers[i];
                 const itemDiv = document.createElement('div');

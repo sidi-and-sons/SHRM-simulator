@@ -44,383 +44,7 @@
         </div>
 
         <!-- Questions Container -->
-        <div id="questionsContainer" class="hidden">
-            <!-- Item 1 -->
-            <div id="question1" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 1 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Helen Park, Operations Director</div>
-                            <div class="email-subject">Critical Knowledge Walking Out the Door</div>
-                            <div class="email-time">Today, 8:30 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi HR,<br><br>
-                        Our most experienced maintenance technician, Frank, is retiring in 6 weeks after 35 years. He's the only one who knows how to repair our legacy equipment, and that knowledge is in his head, not documented anywhere. He's willing to help transfer knowledge but I'm not sure the best approach. How do we capture his expertise before he leaves?<br><br>
-                        Helen
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(1, 'A', 100, 'excellent')">
-                            A) Implement a structured knowledge transfer program: assign a successor to shadow Frank, have him create video tutorials for complex procedures, document troubleshooting guides, and schedule ongoing consulting availability post-retirement.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'B', 80, 'good')">
-                            B) Pair Frank with 2-3 technicians for intensive job shadowing, create a wiki of procedures he documents, and have him record explanations while performing key repairs.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'C', 55, 'acceptable')">
-                            C) Ask Frank to document all the procedures he knows in written manuals before he leaves, with diagrams and step-by-step instructions.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'D', 30, 'poor')">
-                            D) Offer Frank a part-time consulting arrangement after retirement so he can be called in when issues arise with the legacy equipment.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(1, 'E', 10, 'problematic')">
-                            E) Accept that some knowledge will be lost and use this as justification to accelerate replacing the legacy equipment with newer systems.
-                        </button>
-                    </div>
-                    <div id="feedback1" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn1" class="btn btn-primary" onclick="nextQuestion(2)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div id="question2" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 2 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Victor Santos, IT Manager</div>
-                            <div class="email-subject">Documentation Nobody Uses</div>
-                            <div class="email-time">Today, 9:15 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hey,<br><br>
-                        We spent months building a comprehensive internal wiki with procedures, policies, and how-tos. Analytics show almost nobody uses it. People still interrupt each other with questions or reinvent solutions that are already documented. The wiki is becoming outdated because no one maintains it either. What went wrong and how do we fix it?<br><br>
-                        Victor
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(2, 'A', 100, 'excellent')">
-                            A) Assess findability through user testing, improve search and navigation, integrate wiki links into daily workflows and tools, assign content owners for regular updates, and gamify contributions to build a knowledge-sharing culture.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'B', 80, 'good')">
-                            B) Survey users about barriers to wiki use, redesign based on feedback, make the wiki the default answer for questions before escalating, and establish a regular content review process.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'C', 55, 'acceptable')">
-                            C) Improve the wiki's search functionality and organization, send reminder communications about its value, and require teams to update their sections quarterly.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'D', 30, 'poor')">
-                            D) Send a company-wide announcement emphasizing the wiki's value and asking people to use it before asking colleagues questions directly.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(2, 'E', 10, 'problematic')">
-                            E) Accept that people prefer asking colleagues directly, as it's faster and more interactive than searching documentation. Focus resources elsewhere.
-                        </button>
-                    </div>
-                    <div id="feedback2" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn2" class="btn btn-primary" onclick="nextQuestion(3)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div id="question3" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 3 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Rebecca Liu, Training Manager</div>
-                            <div class="email-subject">Post-Training Knowledge Retention</div>
-                            <div class="email-time">Today, 10:00 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi,<br><br>
-                        We invest heavily in training programs, but evaluation data shows employees forget 70% of what they learned within a week. Managers complain that training doesn't stick. We need people to retain and apply what they learn. What strategies can improve knowledge retention after training ends?<br><br>
-                        Rebecca
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(3, 'A', 100, 'excellent')">
-                            A) Implement spaced learning with reinforcement activities, provide job aids for on-the-job reference, create manager discussion guides for coaching conversations, assign application projects, and measure on-the-job behavior change.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'B', 80, 'good')">
-                            B) Add post-training quizzes at intervals, create microlearning refreshers, establish peer learning groups for continued discussion, and give employees specific goals for applying new skills.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'C', 55, 'acceptable')">
-                            C) Provide training materials for reference after sessions, send email reminders about key concepts, and encourage managers to reinforce learning in team meetings.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'D', 30, 'poor')">
-                            D) Make training sessions longer and more intensive so the information is absorbed more deeply during the initial learning experience.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(3, 'E', 10, 'problematic')">
-                            E) Accept that forgetting is natural and plan for employees to retake training periodically to refresh their knowledge.
-                        </button>
-                    </div>
-                    <div id="feedback3" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn3" class="btn btn-primary" onclick="nextQuestion(4)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div id="question4" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 4 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Daniel Woods, Product Development VP</div>
-                            <div class="email-subject">Teams Not Sharing Best Practices</div>
-                            <div class="email-time">Today, 11:30 AM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hello,<br><br>
-                        We have three product teams solving similar problems but never sharing solutions. Each team reinvents the wheel. When I asked why they don't share, they said they don't have time, don't know what other teams are doing, and there's no incentive to help other groups. How do we break down these silos?<br><br>
-                        Daniel
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(4, 'A', 100, 'excellent')">
-                            A) Create structured cross-team sharing forums, establish a solutions repository with recognition for contributors, add collaboration to performance goals, and assign rotating liaison roles between teams.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'B', 80, 'good')">
-                            B) Implement regular cross-team demo days, create shared communication channels, recognize teams that collaborate successfully, and include knowledge sharing in performance criteria.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'C', 55, 'acceptable')">
-                            C) Create a shared Slack channel for the teams to post updates and questions, and schedule monthly all-hands meetings for teams to share what they're working on.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'D', 30, 'poor')">
-                            D) Assign a project manager to identify overlapping work and manually coordinate knowledge sharing between the relevant teams.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(4, 'E', 10, 'problematic')">
-                            E) Accept that some redundancy is inevitable in large organizations and focus on ensuring each team is independently successful rather than forcing collaboration.
-                        </button>
-                    </div>
-                    <div id="feedback4" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn4" class="btn btn-primary" onclick="nextQuestion(5)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div id="question5" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 5 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Amy Chen, Legal Counsel</div>
-                            <div class="email-subject">Protecting Proprietary Knowledge</div>
-                            <div class="email-time">Today, 1:00 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi,<br><br>
-                        A senior engineer just left for a competitor, and I'm worried she took proprietary knowledge with her. We need to balance open knowledge sharing internally with protecting our competitive advantages. How do we encourage collaboration while ensuring sensitive knowledge doesn't walk out the door?<br><br>
-                        Amy
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(5, 'A', 100, 'excellent')">
-                            A) Implement tiered information classification, require NDAs and IP agreements, conduct thorough exit interviews, use access controls for sensitive systems, and ensure knowledge is documented in company systems rather than personal files.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'B', 80, 'good')">
-                            B) Classify knowledge by sensitivity level, restrict access to proprietary information, include strong IP clauses in employment agreements, and standardize off-boarding procedures to recover company knowledge.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'C', 55, 'acceptable')">
-                            C) Review and strengthen non-compete and confidentiality agreements, audit what information departing employees have access to, and revoke access promptly upon resignation.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'D', 30, 'poor')">
-                            D) Limit knowledge sharing to only what's necessary for each role, reducing the risk of any individual knowing too much proprietary information.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(5, 'E', 10, 'problematic')">
-                            E) Accept that knowledge flows with people and focus on innovating faster than competitors rather than trying to lock down information.
-                        </button>
-                    </div>
-                    <div id="feedback5" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn5" class="btn btn-primary" onclick="nextQuestion(6)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 6 -->
-            <div id="question6" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 6 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Nathan Miller, Customer Service Director</div>
-                            <div class="email-subject">New Hire Ramp-Up Time</div>
-                            <div class="email-time">Today, 2:00 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi,<br><br>
-                        It takes our new customer service reps 6 months to become fully productive. During that time, they rely heavily on senior reps for guidance, which pulls experienced staff from their work. We need to accelerate learning curves while reducing the burden on tenured employees. Suggestions?<br><br>
-                        Nathan
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(6, 'A', 100, 'excellent')">
-                            A) Create a comprehensive knowledge base with searchable FAQs, develop scenario-based e-learning modules, implement a structured mentorship program with protected mentor time, and build a progressive certification path with clear milestones.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'B', 80, 'good')">
-                            B) Develop role-specific learning paths, create decision trees for common issues, establish dedicated mentor hours, and implement sandbox practice systems for skill building.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'C', 55, 'acceptable')">
-                            C) Build a library of recorded training sessions and documented procedures that new hires can reference before asking senior reps for help.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'D', 30, 'poor')">
-                            D) Extend the formal training period before new reps start taking calls, so they're better prepared and need less on-the-job guidance.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(6, 'E', 10, 'problematic')">
-                            E) Hire candidates with more prior customer service experience so they require less training and ramp up faster.
-                        </button>
-                    </div>
-                    <div id="feedback6" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn6" class="btn btn-primary" onclick="nextQuestion(7)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 7 -->
-            <div id="question7" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 7 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Sophia Patel, R&D Manager</div>
-                            <div class="email-subject">Learning From Project Failures</div>
-                            <div class="email-time">Today, 3:15 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hello,<br><br>
-                        A major product launch failed, and I want to ensure we learn from it rather than repeat the same mistakes. People are defensive about discussing what went wrong. There's blame and finger-pointing rather than honest reflection. How do we create a culture where we learn from failures constructively?<br><br>
-                        Sophia
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(7, 'A', 100, 'excellent')">
-                            A) Conduct a blame-free post-mortem focused on systems and processes, not individuals. Document lessons learned, share findings across the organization, and create action items to prevent recurrence. Leaders should model vulnerability by sharing their own failures.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'B', 80, 'good')">
-                            B) Facilitate a structured retrospective with ground rules for constructive feedback, focus on what can be improved rather than who was at fault, and publish learnings for future teams.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'C', 55, 'acceptable')">
-                            C) Have team leads document what they believe went wrong and what they would do differently, then compile these perspectives into a lessons learned report.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'D', 30, 'poor')">
-                            D) Wait until emotions have settled before conducting any review, then hold private conversations with key individuals to understand what happened.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(7, 'E', 10, 'problematic')">
-                            E) Move forward quickly rather than dwelling on the failure. Conducting extensive post-mortems can demoralize the team and doesn't change what happened.
-                        </button>
-                    </div>
-                    <div id="feedback7" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn7" class="btn btn-primary" onclick="nextQuestion(8)" disabled>Next Item</button>
-                </div>
-            </div>
-
-            <!-- Item 8 -->
-            <div id="question8" class="question-container">
-                <div class="inbox-item">
-                    <span class="item-number">Item 8 of 8</span>
-                    <div class="email-header">
-                        <div class="email-icon">📧</div>
-                        <div class="email-meta">
-                            <div class="email-from">Chris Thompson, Innovation Lead</div>
-                            <div class="email-subject">Ideas Getting Lost</div>
-                            <div class="email-time">Today, 4:30 PM</div>
-                        </div>
-                    </div>
-                    <div class="email-body">
-                        Hi,<br><br>
-                        Employees share great ideas in meetings and casual conversations, but there's no system to capture, evaluate, or implement them. Good ideas disappear because no one writes them down or follows up. I want to create an innovation pipeline but don't want to add bureaucracy that kills creativity. Advice?<br><br>
-                        Chris
-                    </div>
-                    <div class="response-options">
-                        <button class="response-option" onclick="selectAnswer(8, 'A', 100, 'excellent')">
-                            A) Implement a lightweight idea submission system with quick acknowledgment, transparent evaluation criteria, regular review cycles, feedback to submitters, and visible tracking of ideas through to implementation or explanation of why not.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'B', 80, 'good')">
-                            B) Create a simple idea portal with minimal required fields, assign ownership for reviewing submissions regularly, and celebrate implemented ideas to encourage participation.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'C', 55, 'acceptable')">
-                            C) Designate innovation champions in each department to capture ideas from their teams and bring promising ones to a monthly innovation committee meeting.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'D', 30, 'poor')">
-                            D) Create a Slack channel where people can post ideas, and have leadership review it periodically for anything worth pursuing.
-                        </button>
-                        <button class="response-option" onclick="selectAnswer(8, 'E', 10, 'problematic')">
-                            E) Truly good ideas will naturally rise to the top through champions who push for them. Formal systems often generate more noise than valuable ideas.
-                        </button>
-                    </div>
-                    <div id="feedback8" class="feedback-panel">
-                        <div class="feedback-header">
-                            <span class="feedback-label">Feedback</span>
-                            <span class="feedback-score"></span>
-                        </div>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="nav-buttons">
-                    <button id="nextBtn8" class="btn btn-primary" onclick="showSummary()" disabled>View Results</button>
-                </div>
-            </div>
-        </div>
+        <div id="questionsContainer" class="hidden"></div>
 
         <!-- Summary Screen -->
         <div id="summaryContainer" class="summary-container">
@@ -447,111 +71,307 @@
         let totalQuestions = 8;
         let answers = {};
         let totalScore = 0;
+        let shuffledOptions = {};
 
-        // Feedback data for each question
-        const feedbackData = {
-            1: {
-                A: "Excellent comprehensive knowledge transfer approach. Multiple capture methods (shadowing, video, documentation) address different learning styles. Post-retirement consulting provides safety net while building internal capability.",
-                B: "Good multi-pronged approach combining experiential learning with documentation. Multiple successors reduce single-point-of-failure risk. Recording repairs captures tacit knowledge that's hard to document.",
-                C: "Acceptable but relies too heavily on written documentation. Expert knowledge is often tacit and hard to articulate in writing. Without observation and practice, written manuals may be insufficient.",
-                D: "This doesn't build internal capability. Dependency on post-retirement consulting is expensive, unreliable, and doesn't scale. Frank may not always be available when needed.",
-                E: "Problematic abandonment of institutional knowledge. Equipment replacement decisions should be based on business analysis, not knowledge transfer difficulty. Legacy equipment may still have years of useful life."
+        // Question data
+        const questions = [
+            {
+                id: 1,
+                from: "Helen Park, Operations Director",
+                subject: "Critical Knowledge Walking Out the Door",
+                time: "Today, 8:30 AM",
+                body: `Hi HR,<br><br>
+                    Our most experienced maintenance technician, Frank, is retiring in 6 weeks after 35 years. He's the only one who knows how to repair our legacy equipment, and that knowledge is in his head, not documented anywhere. He's willing to help transfer knowledge but I'm not sure the best approach. How do we capture his expertise before he leaves?<br><br>
+                    Helen`,
+                options: [
+                    { id: 'A', text: "Implement a structured knowledge transfer program: assign a successor to shadow Frank, have him create video tutorials for complex procedures, document troubleshooting guides, and schedule ongoing consulting availability post-retirement.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Pair Frank with 2-3 technicians for intensive job shadowing, create a wiki of procedures he documents, and have him record explanations while performing key repairs.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Ask Frank to document all the procedures he knows in written manuals before he leaves, with diagrams and step-by-step instructions.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Offer Frank a part-time consulting arrangement after retirement so he can be called in when issues arise with the legacy equipment.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Accept that some knowledge will be lost and use this as justification to accelerate replacing the legacy equipment with newer systems.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent comprehensive knowledge transfer approach. Multiple capture methods (shadowing, video, documentation) address different learning styles. Post-retirement consulting provides safety net while building internal capability.",
+                    B: "Good multi-pronged approach combining experiential learning with documentation. Multiple successors reduce single-point-of-failure risk. Recording repairs captures tacit knowledge that's hard to document.",
+                    C: "Acceptable but relies too heavily on written documentation. Expert knowledge is often tacit and hard to articulate in writing. Without observation and practice, written manuals may be insufficient.",
+                    D: "This doesn't build internal capability. Dependency on post-retirement consulting is expensive, unreliable, and doesn't scale. Frank may not always be available when needed.",
+                    E: "Problematic abandonment of institutional knowledge. Equipment replacement decisions should be based on business analysis, not knowledge transfer difficulty. Legacy equipment may still have years of useful life."
+                }
             },
-            2: {
-                A: "Excellent systemic approach addressing usability, workflow integration, maintenance, and culture. User testing reveals actual barriers, integration makes the wiki the path of least resistance, and recognition builds sharing habits.",
-                B: "Good user-centered approach that starts with understanding barriers. Making the wiki the default answer creates behavioral change, and content review ensures ongoing value.",
-                C: "Acceptable improvements to the system itself, but mandates without addressing root causes often fail. If searching is harder than asking colleagues, behavior won't change.",
-                D: "This assumes the problem is awareness rather than usability or workflow. Communications without structural changes rarely change behavior. People know the wiki exists - they just don't use it.",
-                E: "Problematic acceptance of inefficiency. Colleague interruptions don't scale, create knowledge bottlenecks, and are prone to error. Documentation systems provide consistency and reduce dependency on specific people."
+            {
+                id: 2,
+                from: "Victor Santos, IT Manager",
+                subject: "Documentation Nobody Uses",
+                time: "Today, 9:15 AM",
+                body: `Hey,<br><br>
+                    We spent months building a comprehensive internal wiki with procedures, policies, and how-tos. Analytics show almost nobody uses it. People still interrupt each other with questions or reinvent solutions that are already documented. The wiki is becoming outdated because no one maintains it either. What went wrong and how do we fix it?<br><br>
+                    Victor`,
+                options: [
+                    { id: 'A', text: "Assess findability through user testing, improve search and navigation, integrate wiki links into daily workflows and tools, assign content owners for regular updates, and gamify contributions to build a knowledge-sharing culture.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Survey users about barriers to wiki use, redesign based on feedback, make the wiki the default answer for questions before escalating, and establish a regular content review process.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Improve the wiki's search functionality and organization, send reminder communications about its value, and require teams to update their sections quarterly.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Send a company-wide announcement emphasizing the wiki's value and asking people to use it before asking colleagues questions directly.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Accept that people prefer asking colleagues directly, as it's faster and more interactive than searching documentation. Focus resources elsewhere.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent systemic approach addressing usability, workflow integration, maintenance, and culture. User testing reveals actual barriers, integration makes the wiki the path of least resistance, and recognition builds sharing habits.",
+                    B: "Good user-centered approach that starts with understanding barriers. Making the wiki the default answer creates behavioral change, and content review ensures ongoing value.",
+                    C: "Acceptable improvements to the system itself, but mandates without addressing root causes often fail. If searching is harder than asking colleagues, behavior won't change.",
+                    D: "This assumes the problem is awareness rather than usability or workflow. Communications without structural changes rarely change behavior. People know the wiki exists - they just don't use it.",
+                    E: "Problematic acceptance of inefficiency. Colleague interruptions don't scale, create knowledge bottlenecks, and are prone to error. Documentation systems provide consistency and reduce dependency on specific people."
+                }
             },
-            3: {
-                A: "Excellent application of learning science. Spaced repetition combats forgetting curves, job aids support in-moment application, manager involvement reinforces expectations, and measuring behavior change shows real impact.",
-                B: "Good reinforcement strategies combining testing, microlearning, and peer support. Application goals create accountability for transferring learning to work.",
-                C: "Acceptable but passive approaches. Reference materials and reminders don't actively reinforce learning. Without structured application opportunities, knowledge still fades.",
-                D: "This contradicts learning research. Longer sessions don't improve retention - distributed practice does. Information overload can actually reduce what's remembered.",
-                E: "Problematic waste of training investment. Repeated training is expensive and inefficient. Better to invest in retention strategies that make single training sessions stick."
+            {
+                id: 3,
+                from: "Rebecca Liu, Training Manager",
+                subject: "Post-Training Knowledge Retention",
+                time: "Today, 10:00 AM",
+                body: `Hi,<br><br>
+                    We invest heavily in training programs, but evaluation data shows employees forget 70% of what they learned within a week. Managers complain that training doesn't stick. We need people to retain and apply what they learn. What strategies can improve knowledge retention after training ends?<br><br>
+                    Rebecca`,
+                options: [
+                    { id: 'A', text: "Implement spaced learning with reinforcement activities, provide job aids for on-the-job reference, create manager discussion guides for coaching conversations, assign application projects, and measure on-the-job behavior change.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Add post-training quizzes at intervals, create microlearning refreshers, establish peer learning groups for continued discussion, and give employees specific goals for applying new skills.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Provide training materials for reference after sessions, send email reminders about key concepts, and encourage managers to reinforce learning in team meetings.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Make training sessions longer and more intensive so the information is absorbed more deeply during the initial learning experience.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Accept that forgetting is natural and plan for employees to retake training periodically to refresh their knowledge.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent application of learning science. Spaced repetition combats forgetting curves, job aids support in-moment application, manager involvement reinforces expectations, and measuring behavior change shows real impact.",
+                    B: "Good reinforcement strategies combining testing, microlearning, and peer support. Application goals create accountability for transferring learning to work.",
+                    C: "Acceptable but passive approaches. Reference materials and reminders don't actively reinforce learning. Without structured application opportunities, knowledge still fades.",
+                    D: "This contradicts learning research. Longer sessions don't improve retention - distributed practice does. Information overload can actually reduce what's remembered.",
+                    E: "Problematic waste of training investment. Repeated training is expensive and inefficient. Better to invest in retention strategies that make single training sessions stick."
+                }
             },
-            4: {
-                A: "Excellent comprehensive approach addressing time, awareness, and incentive barriers. Forums create dedicated sharing time, repositories make knowledge findable, metrics incentivize collaboration, and liaisons build relationships.",
-                B: "Good structural changes that make sharing visible and valued. Demo days showcase work, recognition reinforces behavior, and performance criteria create accountability.",
-                C: "Acceptable communication infrastructure but may not overcome time and incentive barriers. Channels alone don't guarantee engagement without other structural support.",
-                D: "This creates dependency on a coordinator rather than building collaboration capability. It's not scalable and doesn't address root causes of siloed behavior.",
-                E: "Problematic acceptance of inefficiency. Redundant work wastes resources and slows innovation. Cross-team collaboration is a competitive advantage worth investing in."
+            {
+                id: 4,
+                from: "Daniel Woods, Product Development VP",
+                subject: "Teams Not Sharing Best Practices",
+                time: "Today, 11:30 AM",
+                body: `Hello,<br><br>
+                    We have three product teams solving similar problems but never sharing solutions. Each team reinvents the wheel. When I asked why they don't share, they said they don't have time, don't know what other teams are doing, and there's no incentive to help other groups. How do we break down these silos?<br><br>
+                    Daniel`,
+                options: [
+                    { id: 'A', text: "Create structured cross-team sharing forums, establish a solutions repository with recognition for contributors, add collaboration to performance goals, and assign rotating liaison roles between teams.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Implement regular cross-team demo days, create shared communication channels, recognize teams that collaborate successfully, and include knowledge sharing in performance criteria.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Create a shared Slack channel for the teams to post updates and questions, and schedule monthly all-hands meetings for teams to share what they're working on.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Assign a project manager to identify overlapping work and manually coordinate knowledge sharing between the relevant teams.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Accept that some redundancy is inevitable in large organizations and focus on ensuring each team is independently successful rather than forcing collaboration.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent comprehensive approach addressing time, awareness, and incentive barriers. Forums create dedicated sharing time, repositories make knowledge findable, metrics incentivize collaboration, and liaisons build relationships.",
+                    B: "Good structural changes that make sharing visible and valued. Demo days showcase work, recognition reinforces behavior, and performance criteria create accountability.",
+                    C: "Acceptable communication infrastructure but may not overcome time and incentive barriers. Channels alone don't guarantee engagement without other structural support.",
+                    D: "This creates dependency on a coordinator rather than building collaboration capability. It's not scalable and doesn't address root causes of siloed behavior.",
+                    E: "Problematic acceptance of inefficiency. Redundant work wastes resources and slows innovation. Cross-team collaboration is a competitive advantage worth investing in."
+                }
             },
-            5: {
-                A: "Excellent balanced approach protecting IP while enabling collaboration. Classification allows nuanced access, legal agreements provide recourse, exit processes recover knowledge, and system-based storage reduces personal file risk.",
-                B: "Good multi-layered protection combining technical controls and legal safeguards. Classification enables appropriate sharing while protecting sensitive information.",
-                C: "Acceptable legal protections but reactive rather than proactive. Access audits and agreement reviews don't prevent knowledge loss - they just provide legal options afterward.",
-                D: "This restricts legitimate collaboration that drives innovation. Over-classification creates silos and slows work. The goal is protecting specific sensitive knowledge, not limiting all sharing.",
-                E: "Problematic dismissal of IP protection. While innovation matters, losing proprietary knowledge to competitors causes real competitive harm. Both protection and innovation are necessary."
+            {
+                id: 5,
+                from: "Amy Chen, Legal Counsel",
+                subject: "Protecting Proprietary Knowledge",
+                time: "Today, 1:00 PM",
+                body: `Hi,<br><br>
+                    A senior engineer just left for a competitor, and I'm worried she took proprietary knowledge with her. We need to balance open knowledge sharing internally with protecting our competitive advantages. How do we encourage collaboration while ensuring sensitive knowledge doesn't walk out the door?<br><br>
+                    Amy`,
+                options: [
+                    { id: 'A', text: "Implement tiered information classification, require NDAs and IP agreements, conduct thorough exit interviews, use access controls for sensitive systems, and ensure knowledge is documented in company systems rather than personal files.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Classify knowledge by sensitivity level, restrict access to proprietary information, include strong IP clauses in employment agreements, and standardize off-boarding procedures to recover company knowledge.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Review and strengthen non-compete and confidentiality agreements, audit what information departing employees have access to, and revoke access promptly upon resignation.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Limit knowledge sharing to only what's necessary for each role, reducing the risk of any individual knowing too much proprietary information.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Accept that knowledge flows with people and focus on innovating faster than competitors rather than trying to lock down information.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent balanced approach protecting IP while enabling collaboration. Classification allows nuanced access, legal agreements provide recourse, exit processes recover knowledge, and system-based storage reduces personal file risk.",
+                    B: "Good multi-layered protection combining technical controls and legal safeguards. Classification enables appropriate sharing while protecting sensitive information.",
+                    C: "Acceptable legal protections but reactive rather than proactive. Access audits and agreement reviews don't prevent knowledge loss - they just provide legal options afterward.",
+                    D: "This restricts legitimate collaboration that drives innovation. Over-classification creates silos and slows work. The goal is protecting specific sensitive knowledge, not limiting all sharing.",
+                    E: "Problematic dismissal of IP protection. While innovation matters, losing proprietary knowledge to competitors causes real competitive harm. Both protection and innovation are necessary."
+                }
             },
-            6: {
-                A: "Excellent comprehensive onboarding approach. Self-service resources reduce mentor burden, scenario-based learning builds judgment, protected mentor time ensures quality guidance, and certifications provide clear progression.",
-                B: "Good structured approach with role-specific content and practice opportunities. Dedicated mentor hours prevent ad-hoc interruptions while ensuring support is available.",
-                C: "Acceptable reference resources but still reactive. New hires may not know what to search for. Without structured learning paths, reference materials have limited impact.",
-                D: "This delays productivity without necessarily improving it. Extended training that's not applied quickly may not transfer. Practical application should begin early, with support.",
-                E: "Problematic avoidance of the knowledge transfer challenge. Experienced hires still need company-specific knowledge. This also limits talent pool and may increase costs."
+            {
+                id: 6,
+                from: "Nathan Miller, Customer Service Director",
+                subject: "New Hire Ramp-Up Time",
+                time: "Today, 2:00 PM",
+                body: `Hi,<br><br>
+                    It takes our new customer service reps 6 months to become fully productive. During that time, they rely heavily on senior reps for guidance, which pulls experienced staff from their work. We need to accelerate learning curves while reducing the burden on tenured employees. Suggestions?<br><br>
+                    Nathan`,
+                options: [
+                    { id: 'A', text: "Create a comprehensive knowledge base with searchable FAQs, develop scenario-based e-learning modules, implement a structured mentorship program with protected mentor time, and build a progressive certification path with clear milestones.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Develop role-specific learning paths, create decision trees for common issues, establish dedicated mentor hours, and implement sandbox practice systems for skill building.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Build a library of recorded training sessions and documented procedures that new hires can reference before asking senior reps for help.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Extend the formal training period before new reps start taking calls, so they're better prepared and need less on-the-job guidance.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Hire candidates with more prior customer service experience so they require less training and ramp up faster.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent comprehensive onboarding approach. Self-service resources reduce mentor burden, scenario-based learning builds judgment, protected mentor time ensures quality guidance, and certifications provide clear progression.",
+                    B: "Good structured approach with role-specific content and practice opportunities. Dedicated mentor hours prevent ad-hoc interruptions while ensuring support is available.",
+                    C: "Acceptable reference resources but still reactive. New hires may not know what to search for. Without structured learning paths, reference materials have limited impact.",
+                    D: "This delays productivity without necessarily improving it. Extended training that's not applied quickly may not transfer. Practical application should begin early, with support.",
+                    E: "Problematic avoidance of the knowledge transfer challenge. Experienced hires still need company-specific knowledge. This also limits talent pool and may increase costs."
+                }
             },
-            7: {
-                A: "Excellent psychologically safe approach to failure analysis. Blame-free focus enables honesty, system focus identifies fixable issues, broad sharing prevents repeat mistakes, and leader modeling creates permission for vulnerability.",
-                B: "Good structured approach with clear norms for constructive feedback. Publishing learnings extends value beyond the immediate team.",
-                C: "Acceptable documentation approach but may miss important perspectives if limited to leads. Without structured facilitation, blame dynamics may still influence what's shared.",
-                D: "This delays learning and may lose important details as memories fade. Private conversations don't build organizational learning culture and may feel like investigation rather than improvement.",
-                E: "Problematic failure to learn. Organizations that don't examine failures repeat them. Properly facilitated retrospectives energize teams by giving them agency to improve."
+            {
+                id: 7,
+                from: "Sophia Patel, R&D Manager",
+                subject: "Learning From Project Failures",
+                time: "Today, 3:15 PM",
+                body: `Hello,<br><br>
+                    A major product launch failed, and I want to ensure we learn from it rather than repeat the same mistakes. People are defensive about discussing what went wrong. There's blame and finger-pointing rather than honest reflection. How do we create a culture where we learn from failures constructively?<br><br>
+                    Sophia`,
+                options: [
+                    { id: 'A', text: "Conduct a blame-free post-mortem focused on systems and processes, not individuals. Document lessons learned, share findings across the organization, and create action items to prevent recurrence. Leaders should model vulnerability by sharing their own failures.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Facilitate a structured retrospective with ground rules for constructive feedback, focus on what can be improved rather than who was at fault, and publish learnings for future teams.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Have team leads document what they believe went wrong and what they would do differently, then compile these perspectives into a lessons learned report.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Wait until emotions have settled before conducting any review, then hold private conversations with key individuals to understand what happened.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Move forward quickly rather than dwelling on the failure. Conducting extensive post-mortems can demoralize the team and doesn't change what happened.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent psychologically safe approach to failure analysis. Blame-free focus enables honesty, system focus identifies fixable issues, broad sharing prevents repeat mistakes, and leader modeling creates permission for vulnerability.",
+                    B: "Good structured approach with clear norms for constructive feedback. Publishing learnings extends value beyond the immediate team.",
+                    C: "Acceptable documentation approach but may miss important perspectives if limited to leads. Without structured facilitation, blame dynamics may still influence what's shared.",
+                    D: "This delays learning and may lose important details as memories fade. Private conversations don't build organizational learning culture and may feel like investigation rather than improvement.",
+                    E: "Problematic failure to learn. Organizations that don't examine failures repeat them. Properly facilitated retrospectives energize teams by giving them agency to improve."
+                }
             },
-            8: {
-                A: "Excellent balanced system that's simple enough to encourage participation while structured enough to ensure follow-through. Transparency, feedback, and visible outcomes build trust and continued engagement.",
-                B: "Good lightweight approach focusing on ease of submission and visible outcomes. Celebrating wins reinforces participation without complex processes.",
-                C: "Acceptable human-mediated approach but may bottleneck on champion availability. Valuable ideas may be filtered by departmental priorities before reaching broader evaluation.",
-                D: "This lacks structure for evaluation and follow-through. Without ownership and process, the channel becomes a graveyard of unreviewed ideas, discouraging future participation.",
-                E: "Problematic reliance on individual initiative. Many valuable ideas come from people who aren't natural champions. Informal systems favor the loud over the thoughtful."
+            {
+                id: 8,
+                from: "Chris Thompson, Innovation Lead",
+                subject: "Ideas Getting Lost",
+                time: "Today, 4:30 PM",
+                body: `Hi,<br><br>
+                    Employees share great ideas in meetings and casual conversations, but there's no system to capture, evaluate, or implement them. Good ideas disappear because no one writes them down or follows up. I want to create an innovation pipeline but don't want to add bureaucracy that kills creativity. Advice?<br><br>
+                    Chris`,
+                options: [
+                    { id: 'A', text: "Implement a lightweight idea submission system with quick acknowledgment, transparent evaluation criteria, regular review cycles, feedback to submitters, and visible tracking of ideas through to implementation or explanation of why not.", score: 100, rating: 'excellent' },
+                    { id: 'B', text: "Create a simple idea portal with minimal required fields, assign ownership for reviewing submissions regularly, and celebrate implemented ideas to encourage participation.", score: 80, rating: 'good' },
+                    { id: 'C', text: "Designate innovation champions in each department to capture ideas from their teams and bring promising ones to a monthly innovation committee meeting.", score: 55, rating: 'acceptable' },
+                    { id: 'D', text: "Create a Slack channel where people can post ideas, and have leadership review it periodically for anything worth pursuing.", score: 30, rating: 'poor' },
+                    { id: 'E', text: "Truly good ideas will naturally rise to the top through champions who push for them. Formal systems often generate more noise than valuable ideas.", score: 10, rating: 'problematic' }
+                ],
+                feedback: {
+                    A: "Excellent balanced system that's simple enough to encourage participation while structured enough to ensure follow-through. Transparency, feedback, and visible outcomes build trust and continued engagement.",
+                    B: "Good lightweight approach focusing on ease of submission and visible outcomes. Celebrating wins reinforces participation without complex processes.",
+                    C: "Acceptable human-mediated approach but may bottleneck on champion availability. Valuable ideas may be filtered by departmental priorities before reaching broader evaluation.",
+                    D: "This lacks structure for evaluation and follow-through. Without ownership and process, the channel becomes a graveyard of unreviewed ideas, discouraging future participation.",
+                    E: "Problematic reliance on individual initiative. Many valuable ideas come from people who aren't natural champions. Informal systems favor the loud over the thoughtful."
+                }
             }
-        };
+        ];
+
+        const itemTitles = [
+            "Retiring Expert Knowledge Transfer",
+            "Underutilized Documentation",
+            "Training Knowledge Retention",
+            "Cross-Team Knowledge Silos",
+            "Protecting Proprietary Knowledge",
+            "New Hire Ramp-Up Time",
+            "Learning From Failures",
+            "Capturing Innovation Ideas"
+        ];
+
+        // Shuffle array using Fisher-Yates algorithm
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Render a single question
+        function renderQuestion(question, index) {
+            const shuffledOpts = shuffleArray(question.options);
+            shuffledOptions[question.id] = shuffledOpts;
+
+            const isLast = index === questions.length - 1;
+            const nextAction = isLast ? 'showSummary()' : `nextQuestion(${question.id + 1})`;
+            const nextBtnText = isLast ? 'View Results' : 'Next Item';
+
+            let optionsHtml = '';
+            shuffledOpts.forEach((opt, idx) => {
+                const letter = String.fromCharCode(65 + idx);
+                optionsHtml += `
+                    <button class="response-option" onclick="selectAnswer(${question.id}, '${opt.id}', ${opt.score}, '${opt.rating}')">
+                        ${letter}) ${opt.text}
+                    </button>
+                `;
+            });
+
+            return `
+                <div id="question${question.id}" class="question-container${index === 0 ? ' active' : ''}">
+                    <div class="inbox-item">
+                        <span class="item-number">Item ${question.id} of 8</span>
+                        <div class="email-header">
+                            <div class="email-icon">📧</div>
+                            <div class="email-meta">
+                                <div class="email-from">${question.from}</div>
+                                <div class="email-subject">${question.subject}</div>
+                                <div class="email-time">${question.time}</div>
+                            </div>
+                        </div>
+                        <div class="email-body">${question.body}</div>
+                        <div class="response-options">${optionsHtml}</div>
+                        <div id="feedback${question.id}" class="feedback-panel">
+                            <div class="feedback-header">
+                                <span class="feedback-label">Feedback</span>
+                                <span class="feedback-score"></span>
+                            </div>
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+                    <div class="nav-buttons">
+                        <button id="nextBtn${question.id}" class="btn btn-primary" onclick="${nextAction}" disabled>${nextBtnText}</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render all questions
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = questions.map((q, i) => renderQuestion(q, i)).join('');
+        }
 
         function startSimulation() {
+            renderQuestions();
             document.getElementById('startScreen').classList.add('hidden');
             document.getElementById('progressContainer').classList.remove('hidden');
             document.getElementById('questionsContainer').classList.remove('hidden');
-            document.getElementById('question1').classList.add('active');
         }
 
-        function selectAnswer(questionNum, answer, score, rating) {
-            // Prevent changing answers
+        function selectAnswer(questionNum, answerId, score, rating) {
             if (answers[questionNum]) return;
 
-            // Store answer
+            const question = questions.find(q => q.id === questionNum);
+
             answers[questionNum] = {
-                answer: answer,
+                answer: answerId,
                 score: score,
                 rating: rating,
-                feedback: feedbackData[questionNum][answer]
+                feedback: question.feedback[answerId]
             };
 
-            // Update total score
             totalScore += (score / 100) * 12.5;
 
-            // Disable all options for this question
             const options = document.querySelectorAll(`#question${questionNum} .response-option`);
             options.forEach(opt => {
                 opt.style.pointerEvents = 'none';
                 opt.style.opacity = '0.7';
             });
 
-            // Highlight selected answer
-            const selectedBtn = event.target;
-            selectedBtn.classList.add(rating);
-            selectedBtn.style.opacity = '1';
+            event.target.classList.add(rating);
+            event.target.style.opacity = '1';
 
-            // Show feedback
             const feedbackPanel = document.getElementById(`feedback${questionNum}`);
             feedbackPanel.className = `feedback-panel show ${rating}`;
             feedbackPanel.querySelector('.feedback-score').textContent = `${score}% (${rating.charAt(0).toUpperCase() + rating.slice(1)})`;
-            feedbackPanel.querySelector('.feedback-text').textContent = feedbackData[questionNum][answer];
+            feedbackPanel.querySelector('.feedback-text').textContent = question.feedback[answerId];
 
-            // Enable next button
             document.getElementById(`nextBtn${questionNum}`).disabled = false;
-
-            // Update progress
             updateProgress();
         }
 
@@ -573,11 +393,9 @@
             document.getElementById('progressContainer').classList.add('hidden');
             document.getElementById('summaryContainer').classList.add('show');
 
-            // Calculate final score
             const finalScore = Math.round(totalScore);
             document.getElementById('finalScore').textContent = finalScore;
 
-            // Determine grade
             let grade, gradeClass;
             if (finalScore >= 90) { grade = 'A'; gradeClass = 'grade-a'; }
             else if (finalScore >= 80) { grade = 'B'; gradeClass = 'grade-b'; }
@@ -589,19 +407,7 @@
             gradeBadge.textContent = `Grade: ${grade}`;
             gradeBadge.className = `grade-badge ${gradeClass}`;
 
-            // Build summary items
             const summaryItems = document.getElementById('summaryItems');
-            const itemTitles = [
-                "Retiring Expert Knowledge Transfer",
-                "Underutilized Documentation",
-                "Training Knowledge Retention",
-                "Cross-Team Knowledge Silos",
-                "Protecting Proprietary Knowledge",
-                "New Hire Ramp-Up Time",
-                "Learning From Failures",
-                "Capturing Innovation Ideas"
-            ];
-
             for (let i = 1; i <= totalQuestions; i++) {
                 const answer = answers[i];
                 const itemDiv = document.createElement('div');
